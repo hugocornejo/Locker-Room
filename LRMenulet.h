@@ -23,8 +23,6 @@
 
 }
 
--(IBAction)updateDownloadingStatus:(BOOL)downloading;
-
 -(void)downloadLikes;
 
 @end

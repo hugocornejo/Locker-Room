@@ -55,7 +55,7 @@
 	[statusItem setMenu:theMenu];
 
 	updateTimer = [[NSTimer
-					scheduledTimerWithTimeInterval:5.0
+					scheduledTimerWithTimeInterval:30.0
 					target:self
 					selector:@selector(downloadLikes)
 					userInfo:nil
@@ -70,16 +70,40 @@
 	[self setBusy];
 	NSLog(@"Downloading Dribbble likes...");
 	
-	// TODO actually download something from somewhere
+	NSURL *url = [NSURL URLWithString:@"http://www.google.com"];
+	NSURLRequest *req = [NSURLRequest requestWithURL:url];
+	NSURLDownload *download = [[NSURLDownload alloc] initWithRequest:req delegate:self];
+	if (download) {
+		[download setDestination:@"/tmp/goog" allowOverwrite:YES];
+	} else {
+		// download failed
+	}
+
+//	[NSURLConnection connectionWithRequest:req delegate:<#(id)delegate#>];
 }
 
--(IBAction)updateDownloadingStatus:(BOOL)downloading
+- (void)download:(NSURLDownload *)download didFailWithError:(NSError *)error
 {
-	if (downloading) {
-		[self setBusy];
-	} else {
-		[self setIdle];
-	}
+	[self setIdle];
+	
+    // Release the connection.
+    [download release];
+	
+    // Inform the user.
+    NSLog(@"Download failed! Error - %@ %@",
+          [error localizedDescription],
+          [[error userInfo] objectForKey:NSErrorFailingURLStringKey]);
+}
+
+- (void)downloadDidFinish:(NSURLDownload *)download
+{
+	[self setIdle];
+	
+    // Release the connection.
+    [download release];
+	
+    // Do something with the data.
+    NSLog(@"%@",@"downloadDidFinish");
 }
 
 @end
