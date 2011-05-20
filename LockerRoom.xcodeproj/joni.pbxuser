@@ -1,0 +1,331 @@
+// !$*UTF8*$!
+{
+	089C165DFE840E0CC02AAC07 /* English */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {759, 837}}";
+			sepNavSelRange = "{0, 0}";
+			sepNavVisRange = "{0, 45}";
+			sepNavWindowFrame = "{{15, 63}, {818, 965}}";
+		};
+	};
+	256AC3D80F4B6AC300CF3369 /* LockerRoomAppDelegate.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1334, 482}}";
+			sepNavSelRange = "{0, 0}";
+			sepNavVisRange = "{0, 324}";
+			sepNavWindowFrame = "{{15, 63}, {818, 965}}";
+		};
+	};
+	256AC3D90F4B6AC300CF3369 /* LockerRoomAppDelegate.m */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1411, 467}}";
+			sepNavSelRange = "{0, 0}";
+			sepNavVisRange = "{0, 380}";
+			sepNavWindowFrame = "{{15, 63}, {818, 965}}";
+		};
+	};
+	256AC3F00F4B6AF500CF3369 /* LockerRoom_Prefix.pch */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1411, 467}}";
+			sepNavSelRange = "{0, 0}";
+			sepNavVisRange = "{0, 151}";
+		};
+	};
+	29B97313FDCFA39411CA2CEA /* Project object */ = {
+		activeBuildConfigurationName = Debug;
+		activeExecutable = F8CC654F137D0F2900DB5574 /* LockerRoom */;
+		activeTarget = 8D1107260486CEB800E47090 /* LockerRoom */;
+		addToTargets = (
+			8D1107260486CEB800E47090 /* LockerRoom */,
+		);
+		codeSenseManager = F8CC655E137D0F4A00DB5574 /* Code sense */;
+		executables = (
+			F8CC654F137D0F2900DB5574 /* LockerRoom */,
+		);
+		perUserDictionary = {
+			PBXConfiguration.PBXFileTableDataSource3.PBXFileTableDataSource = {
+				PBXFileTableDataSourceColumnSortingDirectionKey = "-1";
+				PBXFileTableDataSourceColumnSortingKey = PBXFileDataSource_Filename_ColumnID;
+				PBXFileTableDataSourceColumnWidthsKey = (
+					20,
+					1156,
+					20,
+					48,
+					43,
+					43,
+					20,
+				);
+				PBXFileTableDataSourceColumnsKey = (
+					PBXFileDataSource_FiletypeID,
+					PBXFileDataSource_Filename_ColumnID,
+					PBXFileDataSource_Built_ColumnID,
+					PBXFileDataSource_ObjectSize_ColumnID,
+					PBXFileDataSource_Errors_ColumnID,
+					PBXFileDataSource_Warnings_ColumnID,
+					PBXFileDataSource_Target_ColumnID,
+				);
+			};
+			PBXPerProjectTemplateStateSaveDate = 327617504;
+			PBXWorkspaceStateSaveDate = 327617504;
+		};
+		perUserProjectItems = {
+			F800EE471386EDEA0029B321 = F800EE471386EDEA0029B321 /* PBXTextBookmark */;
+			F800EE481386EDEA0029B321 = F800EE481386EDEA0029B321 /* PlistBookmark */;
+			F800EE491386EDEA0029B321 = F800EE491386EDEA0029B321 /* PBXTextBookmark */;
+			F800EE4A1386EDEA0029B321 = F800EE4A1386EDEA0029B321 /* PBXTextBookmark */;
+			F800EE4B1386EDEA0029B321 = F800EE4B1386EDEA0029B321 /* PBXTextBookmark */;
+			F800EE631386EFB10029B321 = F800EE631386EFB10029B321 /* PBXTextBookmark */;
+			F800EE8C1386F2270029B321 = F800EE8C1386F2270029B321 /* PBXTextBookmark */;
+			F800EEA91386F32F0029B321 = F800EEA91386F32F0029B321 /* PBXTextBookmark */;
+			F800EEAA1386F32F0029B321 = F800EEAA1386F32F0029B321 /* PBXTextBookmark */;
+			F800EEAB1386F32F0029B321 = F800EEAB1386F32F0029B321 /* PBXTextBookmark */;
+			F800EEAC1386F32F0029B321 = F800EEAC1386F32F0029B321 /* PBXTextBookmark */;
+			F8B1F6FF13870BFD002BE9FC /* PBXTextBookmark */ = F8B1F6FF13870BFD002BE9FC /* PBXTextBookmark */;
+			F8B1F70213870BFD002BE9FC /* PBXTextBookmark */ = F8B1F70213870BFD002BE9FC /* PBXTextBookmark */;
+			F8CC6568137D261000DB5574 = F8CC6568137D261000DB5574 /* PBXTextBookmark */;
+			F8CC656A137D261000DB5574 = F8CC656A137D261000DB5574 /* PBXTextBookmark */;
+		};
+		sourceControlManager = F8CC655D137D0F4A00DB5574 /* Source Control */;
+		userBuildSettings = {
+		};
+	};
+	29B97316FDCFA39411CA2CEA /* main.m */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1411, 482}}";
+			sepNavSelRange = "{0, 0}";
+			sepNavVisRange = "{0, 256}";
+		};
+	};
+	8D1107260486CEB800E47090 /* LockerRoom */ = {
+		activeExec = 0;
+		executables = (
+			F8CC654F137D0F2900DB5574 /* LockerRoom */,
+		);
+	};
+	F800EDF41386DD330029B321 /* LRMenulet.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {759, 837}}";
+			sepNavSelRange = "{212, 0}";
+			sepNavVisRange = "{0, 508}";
+			sepNavWindowFrame = "{{15, 63}, {818, 965}}";
+		};
+	};
+	F800EDF51386DD330029B321 /* LRMenulet.m */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {516, 936}}";
+			sepNavSelRange = "{1585, 0}";
+			sepNavVisRange = "{1190, 265}";
+			sepNavWindowFrame = "{{891, 38}, {818, 965}}";
+		};
+	};
+	F800EE091386EA2E0029B321 /* LRPreferenceWindow.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1334, 482}}";
+			sepNavSelRange = "{199, 0}";
+			sepNavVisRange = "{0, 211}";
+			sepNavWindowFrame = "{{15, 63}, {818, 965}}";
+		};
+	};
+	F800EE0A1386EA2E0029B321 /* LRPreferenceWindow.m */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1334, 482}}";
+			sepNavSelRange = "{165, 0}";
+			sepNavVisRange = "{0, 207}";
+		};
+	};
+	F800EE471386EDEA0029B321 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 29B97316FDCFA39411CA2CEA /* main.m */;
+		name = "main.m: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 256;
+		vrLoc = 0;
+	};
+	F800EE481386EDEA0029B321 /* PlistBookmark */ = {
+		isa = PlistBookmark;
+		fRef = 8D1107310486CEB800E47090 /* LockerRoom-Info.plist */;
+		fallbackIsa = PBXBookmark;
+		isK = 0;
+		kPath = (
+		);
+		name = "/Users/joni/Documents/LockerRoom/LockerRoom-Info.plist";
+		rLen = 0;
+		rLoc = 9223372036854775808;
+	};
+	F800EE491386EDEA0029B321 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 256AC3D80F4B6AC300CF3369 /* LockerRoomAppDelegate.h */;
+		name = "LockerRoomAppDelegate.h: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 324;
+		vrLoc = 0;
+	};
+	F800EE4A1386EDEA0029B321 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = F800EE0A1386EA2E0029B321 /* LRPreferenceWindow.m */;
+		name = "LRPreferenceWindow.m: 9";
+		rLen = 0;
+		rLoc = 165;
+		rType = 0;
+		vrLen = 207;
+		vrLoc = 0;
+	};
+	F800EE4B1386EDEA0029B321 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = F800EE091386EA2E0029B321 /* LRPreferenceWindow.h */;
+		name = "LRPreferenceWindow.h: 10";
+		rLen = 0;
+		rLoc = 199;
+		rType = 0;
+		vrLen = 211;
+		vrLoc = 0;
+	};
+	F800EE631386EFB10029B321 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = F800EDF51386DD330029B321 /* LRMenulet.m */;
+		name = "LockerRoomMenulet.m: 56";
+		rLen = 0;
+		rLoc = 1454;
+		rType = 0;
+		vrLen = 1383;
+		vrLoc = 148;
+	};
+	F800EE8C1386F2270029B321 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = F800EDF41386DD330029B321 /* LRMenulet.h */;
+		name = "LockerRoomMenulet.h: 20";
+		rLen = 0;
+		rLoc = 390;
+		rType = 0;
+		vrLen = 508;
+		vrLoc = 0;
+	};
+	F800EEA91386F32F0029B321 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = F800EDF51386DD330029B321 /* LRMenulet.m */;
+		name = "LRMenulet.m: 9";
+		rLen = 0;
+		rLoc = 159;
+		rType = 0;
+		vrLen = 573;
+		vrLoc = 0;
+	};
+	F800EEAA1386F32F0029B321 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = F800EDF41386DD330029B321 /* LRMenulet.h */;
+		name = "LRMenulet.h: 20";
+		rLen = 0;
+		rLoc = 390;
+		rType = 0;
+		vrLen = 508;
+		vrLoc = 0;
+	};
+	F800EEAB1386F32F0029B321 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = F800EDF41386DD330029B321 /* LRMenulet.h */;
+		name = "LockerRoomMenulet.h: 10";
+		rLen = 0;
+		rLoc = 212;
+		rType = 0;
+		vrLen = 508;
+		vrLoc = 0;
+	};
+	F800EEAC1386F32F0029B321 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = F800EDF41386DD330029B321 /* LRMenulet.h */;
+		name = "LRMenulet.h: 10";
+		rLen = 0;
+		rLoc = 212;
+		rType = 0;
+		vrLen = 508;
+		vrLoc = 0;
+	};
+	F8B1F6FF13870BFD002BE9FC /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = F800EDF41386DD330029B321 /* LRMenulet.h */;
+		name = "LRMenulet.h: 20";
+		rLen = 0;
+		rLoc = 390;
+		rType = 0;
+		vrLen = 508;
+		vrLoc = 0;
+	};
+	F8B1F70213870BFD002BE9FC /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = F800EDF41386DD330029B321 /* LRMenulet.h */;
+		name = "LRMenulet.h: 10";
+		rLen = 0;
+		rLoc = 212;
+		rType = 0;
+		vrLen = 508;
+		vrLoc = 0;
+	};
+	F8CC654F137D0F2900DB5574 /* LockerRoom */ = {
+		isa = PBXExecutable;
+		activeArgIndices = (
+		);
+		argumentStrings = (
+		);
+		autoAttachOnCrash = 1;
+		breakpointsEnabled = 0;
+		configStateDict = {
+		};
+		customDataFormattersEnabled = 1;
+		dataTipCustomDataFormattersEnabled = 1;
+		dataTipShowTypeColumn = 1;
+		dataTipSortType = 0;
+		debuggerPlugin = GDBDebugging;
+		disassemblyDisplayState = 0;
+		dylibVariantSuffix = "";
+		enableDebugStr = 1;
+		environmentEntries = (
+		);
+		executableSystemSymbolLevel = 0;
+		executableUserSymbolLevel = 0;
+		libgmallocEnabled = 0;
+		name = LockerRoom;
+		savedGlobals = {
+		};
+		showTypeColumn = 0;
+		sourceDirectories = (
+		);
+	};
+	F8CC655D137D0F4A00DB5574 /* Source Control */ = {
+		isa = PBXSourceControlManager;
+		fallbackIsa = XCSourceControlManager;
+		isSCMEnabled = 0;
+		scmConfiguration = {
+			repositoryNamesForRoots = {
+				"" = "";
+			};
+		};
+	};
+	F8CC655E137D0F4A00DB5574 /* Code sense */ = {
+		isa = PBXCodeSenseManager;
+		indexTemplatePath = "";
+	};
+	F8CC6568137D261000DB5574 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 256AC3D90F4B6AC300CF3369 /* LockerRoomAppDelegate.m */;
+		name = "LockerRoomAppDelegate.m: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 380;
+		vrLoc = 0;
+	};
+	F8CC656A137D261000DB5574 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 256AC3F00F4B6AF500CF3369 /* LockerRoom_Prefix.pch */;
+		name = "LockerRoom_Prefix.pch: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 151;
+		vrLoc = 0;
+	};
+}
