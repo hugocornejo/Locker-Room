@@ -1,3 +1,5 @@
-build
-LockerRoom.xcodeproj/*.mode1v3
-LockerRoom.xcodeproj/*.pbxuser
+build/*
+*.mode1v3
+*.pbxuser
+.DS_Store
+profile
