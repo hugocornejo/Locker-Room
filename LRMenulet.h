@@ -10,19 +10,12 @@
 #import "LRPreferenceWindow.h"
 
 @interface LRMenulet : NSObject {
-	
 	NSStatusItem *statusItem;
-	
 	IBOutlet NSMenu *theMenu;
-	IBOutlet LRPreferenceWindow *preferenceWindow;
-	
 	NSImage *idleIcon;
 	NSImage *busyIcon;
-	
-	NSTimer *updateTimer;
-
 }
 
--(void)downloadLikes;
+-(void)setBusy:(BOOL)busy;
 
 @end

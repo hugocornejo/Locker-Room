@@ -7,11 +7,16 @@
 //
 
 #import <Cocoa/Cocoa.h>
+#import "LRMenulet.h"
+#import "LRPreferenceWindow.h"
 
 @interface LockerRoomAppDelegate : NSObject <NSApplicationDelegate> {
-    NSWindow *window;
+	IBOutlet LRMenulet *menulet;
+	IBOutlet LRPreferenceWindow *preferenceWindow;
+	
+	NSTimer *updateTimer;
 }
 
-@property (assign) IBOutlet NSWindow *window;
+-(void)downloadLikes;
 
 @end
