@@ -7,7 +7,8 @@
 //
 
 #import "LockerRoomAppDelegate.h"
-#import "DribbblePlayer.h"
+#import "DribbbleAPI.h"
+#import "DribbbleLikeDownloader.h"
 
 @implementation LockerRoomAppDelegate
 
@@ -21,7 +22,7 @@
 					userInfo:nil
 					repeats:YES] retain];
 	
-//	[updateTimer fireDate];
+	[updateTimer fire];
 }
 
 -(void)dealloc
@@ -30,51 +31,19 @@
 	[super dealloc];
 }
 
-
 -(void)downloadLikes
 {
 	[menulet setBusy:YES];
 	NSLog(@"Downloading Dribbble likes...");
+	NSString *playerId = @"simplebits";
 	
-	NSArray *likes = [DribbblePlayer likes:@"simplebits"];
-	[menulet setBusy:NO];
-	
-	NSLog(@"%s", [likes description]);
-	
-	//NSURL *url = [NSURL URLWithString:@"http://www.google.com"];
-	//NSURLRequest *req = [NSURLRequest requestWithURL:url];
-	//NSURLDownload *download = [[NSURLDownload alloc] initWithRequest:req delegate:self];
-	//if (download) {
-	//	[download setDestination:@"/tmp/goog" allowOverwrite:YES];
-	//} else {
-	//download failed
-	//}
-	
-	//	[NSURLConnection connectionWithRequest:req delegate:<#(id)delegate#>];
+	DribbbleLikeDownloader *downloader = [DribbbleLikeDownloader initWithPlayer:playerId];
+	[downloader downloadLikes:self];
 }
 
-- (void)download:(NSURLDownload *)download didFailWithError:(NSError *)error
+-(void)dribbbleLikeDownloaderFinished:(DribbbleLikeDownloader*)downloader
 {
 	[menulet setBusy:NO];
-	
-    // Release the connection.
-    [download release];
-	
-    // Inform the user.
-    NSLog(@"Download failed! Error - %@ %@",
-          [error localizedDescription],
-          [[error userInfo] objectForKey:NSErrorFailingURLStringKey]);
-}
-
-- (void)downloadDidFinish:(NSURLDownload *)download
-{
-	[menulet setBusy:NO];
-	
-    // Release the connection.
-    [download release];
-	
-    // Do something with the data.
-    NSLog(@"%@",@"downloadDidFinish");
 }
 
 @end
