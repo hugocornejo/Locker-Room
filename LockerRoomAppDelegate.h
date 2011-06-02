@@ -9,12 +9,15 @@
 #import <Cocoa/Cocoa.h>
 #import "LRMenulet.h"
 #import "LRPreferenceWindow.h"
+#import "DribbbleLikeDownloader.h"
 
 @interface LockerRoomAppDelegate : NSObject <NSApplicationDelegate> {
 	IBOutlet LRMenulet *menulet;
 	IBOutlet LRPreferenceWindow *preferenceWindow;
 	
 	NSTimer *updateTimer;
+	
+	DribbbleLikeDownloader *downloader;
 }
 
 -(void)downloadLikes;

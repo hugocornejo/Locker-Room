@@ -31,45 +31,51 @@
 	[super dealloc];
 }
 
--(void)downloadNextPage
+-(BOOL)downloadNextPage
 {
 	if (numberOfPages != -1 && currentPage >= numberOfPages) {
 		NSLog(@"Finished downloading!");
+		// download finished
+		[currentDelegate performSelector:@selector(dribbbleLikeDownloaderFinished:) withObject:self];
 		downloadInProgress = NO;
-		return;
+		return NO;
 	} else if (currentDownloads > 0) {
-		// Still downloading last page, hold your horses...
-		return;
+		// Still downloading a page, hold your horses...
+		downloadInProgress = YES;
+		return YES;
 	} else {
 		// Go get that new page!
 		currentPage++;
-	}
-	
-	NSString *urlStr = [NSString stringWithFormat:
-						@"http://api.dribbble.com/players/%@/shots/likes?page=%d&per_page=30", 
-						playerId, currentPage];
-	NSURL *url = [NSURL URLWithString:urlStr];
-	NSURLRequest *req = [NSURLRequest requestWithURL:url];
-	NSURLConnection *conn = [NSURLConnection connectionWithRequest:req delegate:self];
-	if (conn) {
-		NSLog(@"Downloading page %d", currentPage);
-		if (currentData == nil) {
-			currentData = [[NSMutableData dataWithLength:0] retain];
+		NSString *urlStr = [NSString stringWithFormat:
+							@"http://api.dribbble.com/players/%@/shots/likes?page=%d&per_page=30", 
+							playerId, currentPage];
+		NSURL *url = [NSURL URLWithString:urlStr];
+		NSURLRequest *req = [NSURLRequest requestWithURL:url];
+		NSURLConnection *conn = [NSURLConnection connectionWithRequest:req delegate:self];
+		if (conn) {
+			NSLog(@"Downloading page %d", currentPage);
+			if (currentData == nil) {
+				currentData = [[NSMutableData dataWithLength:0] retain];
+			} else {
+				[currentData setLength:0];
+			}
+			downloadInProgress = YES; // download started
+			[currentDelegate performSelector:@selector(dribbbleLikeDownloaderStarted:) withObject:self];
+			return YES;
 		} else {
-			[currentData setLength:0];
+			NSLog(@"Download failed on page %d", currentPage);
+			[currentDelegate performSelector:@selector(dribbbleLikeDownloaderFinished:) withObject:self];
+			downloadInProgress = NO; // download failed
+			return NO;
 		}
-		downloadInProgress = YES;
-	} else {
-		NSLog(@"Download failed on page %d", currentPage);
-		downloadInProgress = NO;
 	}
 }
 
 -(void)downloadLikes:(id)delegate
 {
-	// TODO: actually use the delegate...
 	if (downloadInProgress == NO) {
 		currentPage = 0;
+		currentDelegate = delegate;
 		[self downloadNextPage];
 	}
 }

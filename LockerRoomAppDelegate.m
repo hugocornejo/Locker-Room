@@ -16,13 +16,16 @@
 	// Insert code here to initialize your application
 	
 	updateTimer = [[NSTimer
-					scheduledTimerWithTimeInterval:60.0
+					scheduledTimerWithTimeInterval:10.0
 					target:self
 					selector:@selector(downloadLikes)
 					userInfo:nil
 					repeats:YES] retain];
 	
-	[updateTimer fire];
+	NSString *playerId = @"neora";
+	downloader = [DribbbleLikeDownloader initWithPlayer:playerId];
+	
+//	[updateTimer fire];
 }
 
 -(void)dealloc
@@ -33,17 +36,24 @@
 
 -(void)downloadLikes
 {
-	[menulet setBusy:YES];
+	//[menulet setBusy:YES];
 	NSLog(@"Downloading Dribbble likes...");
-	NSString *playerId = @"simplebits";
 	
-	DribbbleLikeDownloader *downloader = [DribbbleLikeDownloader initWithPlayer:playerId];
+	//NSString *playerId = @"simplebits";
+	//DribbbleLikeDownloader *downloader = [DribbbleLikeDownloader initWithPlayer:playerId];
 	[downloader downloadLikes:self];
 }
 
 -(void)dribbbleLikeDownloaderFinished:(DribbbleLikeDownloader*)downloader
 {
+	NSLog(@"Downloader finished");
 	[menulet setBusy:NO];
+}
+
+-(void)dribbbleLikeDownloaderStarted:(DribbbleLikeDownloader*)downloader
+{
+	NSLog(@"Downloader started");
+	[menulet setBusy:YES];
 }
 
 @end

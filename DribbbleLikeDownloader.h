@@ -18,6 +18,7 @@
 	BOOL downloadInProgress;
 	
 	NSMutableData *currentData;
+	id currentDelegate;
 }
 
 +(DribbbleLikeDownloader*)initWithPlayer:(NSString*)playerId;
