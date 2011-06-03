@@ -99,19 +99,32 @@
 	
 	// go get them likes!
 	NSArray *likes = [page objectForKey:@"shots"];
+	NSInteger downloadsStarted = 0;
 	NSUInteger i, count = [likes count];
 	for (i = 0; i < count; i++) {
 		NSDictionary *obj = [likes objectAtIndex:i];
-		NSURL *url = [NSURL URLWithString:[obj objectForKey:@"image_url"]];
-		NSURLRequest *req = [NSURLRequest requestWithURL:url];
-		NSURLDownload *download = [[NSURLDownload alloc] initWithRequest:req delegate:self];
-		if (download) {
-			NSString *fileName = [self getFileName:obj];
-			[download setDestination:fileName allowOverwrite:NO];
-			NSLog(@"Downloading shot %@ to %@", [obj objectForKey:@"title"], fileName);
+		NSString *fileName = [self getFileName:obj];
+		NSFileManager *fm = [NSFileManager defaultManager];
+		if (![fm fileExistsAtPath:fileName]) {
+			NSURL *url = [NSURL URLWithString:[obj objectForKey:@"image_url"]];
+			NSURLRequest *req = [NSURLRequest requestWithURL:url];
+			NSURLDownload *download = [[NSURLDownload alloc] initWithRequest:req delegate:self];
+			if (download) {
+				[download setDestination:fileName allowOverwrite:NO];
+				downloadsStarted = downloadsStarted + 1;
+				NSLog(@"Downloading shot %@ to %@", [obj objectForKey:@"title"], fileName);
+			} else {
+				NSLog(@"Failed to download shot %@", [obj objectForKey:@"title"]);
+			}
 		} else {
-			NSLog(@"Failed to download shot %@", [obj objectForKey:@"title"]);
+			NSLog(@"Already downloaded: %@", fileName);
 		}
+	}
+	
+	if (downloadsStarted == 0) {
+		downloadInProgress = NO;
+		NSLog(@"Already downloaded everything!");
+		[currentDelegate performSelector:@selector(dribbbleLikeDownloaderFinished:) withObject:self];
 	}
 }
 
@@ -146,13 +159,13 @@
 
 -(void)downloadDidBegin:(NSURLDownload *)download
 {
-	NSLog(@"Download did begin");
+//	NSLog(@"Download did begin");
 	currentDownloads++;
 }
 
 -(void)downloadDidFinish:(NSURLDownload *)download
 {
-	NSLog(@"Download finished: %@", [[download request] URL]);
+//	NSLog(@"Download finished: %@", [[download request] URL]);
 	currentDownloads--;
 	[self downloadNextPage];
 }

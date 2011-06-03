@@ -7,7 +7,6 @@
 //
 
 #import "LockerRoomAppDelegate.h"
-#import "DribbbleAPI.h"
 #import "DribbbleLikeDownloader.h"
 
 @implementation LockerRoomAppDelegate
@@ -16,7 +15,7 @@
 	// Insert code here to initialize your application
 	
 	updateTimer = [[NSTimer
-					scheduledTimerWithTimeInterval:10.0
+					scheduledTimerWithTimeInterval:120.0
 					target:self
 					selector:@selector(downloadLikes)
 					userInfo:nil
@@ -24,8 +23,7 @@
 	
 	NSString *playerId = @"neora";
 	downloader = [DribbbleLikeDownloader initWithPlayer:playerId];
-	
-//	[updateTimer fire];
+	[updateTimer fire];
 }
 
 -(void)dealloc
