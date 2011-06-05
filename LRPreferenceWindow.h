@@ -8,7 +8,9 @@
 #import <Cocoa/Cocoa.h>
 
 @interface LRPreferenceWindow : NSWindow {
-
+	IBOutlet NSButton *btnChooseDirectory;
 }
+
+-(IBAction)chooseDirectory:sender;
 
 @end
