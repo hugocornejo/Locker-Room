@@ -66,4 +66,21 @@
 	[menulet setBusy:YES];
 }
 
+-(IBAction)openDirectory:(id)sender
+{
+	NSString *dirName = [[NSUserDefaults standardUserDefaults] stringForKey:@"LockerRoomDirectory"];
+	[[NSWorkspace sharedWorkspace] openFile:dirName];
+}
+
+-(IBAction)goToWeb:(id)sender
+{
+	NSURL *url = [NSURL URLWithString:@"http://www.dribbble.com"];
+	[[NSWorkspace sharedWorkspace] openURL:url];
+}
+
+-(IBAction)exit:(id)sender
+{
+	[NSApp terminate:self];
+}
+
 @end
