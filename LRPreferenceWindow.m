@@ -12,36 +12,18 @@
 -(void)awakeFromNib
 {
 	NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-	NSString *lrdir = [defaults stringForKey:@"LockerRoomDirectory"];
-
 	[txtUsername setStringValue:[defaults stringForKey:@"DribbbleUserName"]];
-
-	[txtDirectory setStringValue:lrdir];
-	
-	[pathPopUp setPath:lrdir];
+	[pathPopUp setPath:[defaults stringForKey:@"LockerRoomDirectory"]];
 
 }
 
--(IBAction)handleAccept:(id)sender
+-(void)close
 {
 	NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-	[defaults setObject:[txtDirectory stringValue]	forKey:@"LockerRoomDirectory"];
+	[defaults setObject:[pathPopUp path]			forKey:@"LockerRoomDirectory"];
 	[defaults setObject:[txtUsername stringValue]	forKey:@"DribbbleUserName"];
 	[defaults synchronize];
 	[super close];
-}
-
--(IBAction)handleCancel:(id)sender
-{
-	[super close];
-}
-
--(void)pathControl:(NSPathControl *)pathControl willDisplayOpenPanel:(NSOpenPanel *)openPanel
-{
-	[openPanel setCanChooseFiles:NO];
-	[openPanel setCanCreateDirectories:YES];
-	[openPanel setCanChooseDirectories:YES];
-	[openPanel setPrompt:@"Choose the download location for your dribbble likes"];
 }
 
 @end

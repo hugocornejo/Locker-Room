@@ -10,15 +10,8 @@
 #import "LRPathPopUpButton.h"
 
 @interface LRPreferenceWindow : NSWindow {
-	IBOutlet NSButton *btnChooseDirectory;
-	IBOutlet NSTextField *txtDirectory;
 	IBOutlet NSTextField *txtUsername;
-	
 	IBOutlet LRPathPopUpButton *pathPopUp;
 }
-
--(IBAction)handleAccept:sender;
--(IBAction)handleCancel:sender;
-
 
 @end
