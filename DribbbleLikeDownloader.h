@@ -10,6 +10,7 @@
 
 
 @interface DribbbleLikeDownloader : NSObject {
+	BOOL checkAllPages;
 	NSString *playerId;
 	NSString *targetDirectory;
 	NSInteger currentPage;
@@ -25,5 +26,7 @@
 
 
 -(void)downloadLikes:(id)delegate;
+
+@property(assign) BOOL checkAllPages;
 
 @end

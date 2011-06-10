@@ -35,21 +35,27 @@
 
 -(void)downloadLikes
 {
+	static NSInteger fullScanCountdown = 0;
 	// what if user name or directory is changed while the downloader is working?
 	if (downloader == nil) {
 		NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
 		NSString *username = [defaults stringForKey:@"DribbbleUserName"];
 		NSString *directory = [defaults stringForKey:@"LockerRoomDirectory"];
-		NSLog(@"Username: %@ Directory: %@", username, directory);
 		if (username != nil && directory != nil) {
 			downloader = [DribbbleLikeDownloader downloaderForPlayer:username directory:directory];
+			if (fullScanCountdown == 0) {
+				NSLog(@"Too long since last full check, checking all pages");
+				downloader.checkAllPages = YES;
+				fullScanCountdown = 60;
+			}
 		} else {
 			downloader = nil;
-			// bail out
+			// no username, no directory; bail out
 			return;
 		}
 	}
 	[downloader downloadLikes:self];
+	fullScanCountdown -= 1;
 }
 
 -(void)dribbbleLikeDownloaderFinished:(DribbbleLikeDownloader*)dld
@@ -62,7 +68,6 @@
 
 -(void)dribbbleLikeDownloaderStarted:(DribbbleLikeDownloader*)dld
 {
-	NSLog(@"Downloader started");
 	[menulet setBusy:YES];
 }
 

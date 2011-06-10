@@ -11,6 +11,8 @@
 
 @implementation DribbbleLikeDownloader
 
+@synthesize checkAllPages;
+
 +(DribbbleLikeDownloader*)downloaderForPlayer:(NSString *)playerId directory:(NSString *)target
 {
 	DribbbleLikeDownloader *obj = [DribbbleLikeDownloader alloc];
@@ -113,19 +115,23 @@
 			if (download) {
 				[download setDestination:fileName allowOverwrite:NO];
 				downloadsStarted = downloadsStarted + 1;
-				NSLog(@"Downloading shot %@ to %@", [obj objectForKey:@"title"], fileName);
 			} else {
 				NSLog(@"Failed to download shot %@", [obj objectForKey:@"title"]);
 			}
 		} else {
-			NSLog(@"Already downloaded: %@", fileName);
+			//NSLog(@"Already downloaded: %@", fileName);
 		}
 	}
 	
 	if (downloadsStarted == 0) {
-		downloadInProgress = NO;
-		NSLog(@"Already downloaded everything!");
-		[currentDelegate performSelector:@selector(dribbbleLikeDownloaderFinished:) withObject:self];
+		if (checkAllPages) {
+			// if no downloads are started, go to next page
+			[self downloadNextPage];
+		} else {
+			downloadInProgress = NO;
+			NSLog(@"Already downloaded everything!");
+			[currentDelegate performSelector:@selector(dribbbleLikeDownloaderFinished:) withObject:self];
+		}
 	}
 }
 
