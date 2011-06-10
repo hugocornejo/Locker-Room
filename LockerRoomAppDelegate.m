@@ -19,6 +19,11 @@
 					selector:@selector(downloadLikes)
 					userInfo:nil
 					repeats:YES] retain];
+	
+	NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+	if ([defaults stringForKey:@"DribbbleUserName"] == nil) {
+		[preferenceWindow makeKeyAndOrderFront:self];
+	}
 }
 
 -(void)dealloc
