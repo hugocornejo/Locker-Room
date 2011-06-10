@@ -9,18 +9,39 @@
 
 @implementation LRPreferenceWindow
 
--(IBAction)chooseDirectory:(id)sender {
-	NSOpenPanel *op = [NSOpenPanel openPanel];
-	[op setCanChooseFiles:NO];
-	[op setCanCreateDirectories:YES];
-	[op setCanChooseDirectories:YES];
-	[op beginSheetModalForWindow:self completionHandler:^(NSInteger result) {
-		if (result == NSOKButton) {
-			[op orderOut:self];
-			NSLog(@"User chose %@", [op filename]);
-		}
-	}];
-	NSLog(@"choosing directory");
+-(void)awakeFromNib
+{
+	NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+	NSString *lrdir = [defaults stringForKey:@"LockerRoomDirectory"];
+
+	[txtUsername setStringValue:[defaults stringForKey:@"DribbbleUserName"]];
+
+	[txtDirectory setStringValue:lrdir];
+	
+	[pathPopUp setPath:lrdir];
+
+}
+
+-(IBAction)handleAccept:(id)sender
+{
+	NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+	[defaults setObject:[txtDirectory stringValue]	forKey:@"LockerRoomDirectory"];
+	[defaults setObject:[txtUsername stringValue]	forKey:@"DribbbleUserName"];
+	[defaults synchronize];
+	[super close];
+}
+
+-(IBAction)handleCancel:(id)sender
+{
+	[super close];
+}
+
+-(void)pathControl:(NSPathControl *)pathControl willDisplayOpenPanel:(NSOpenPanel *)openPanel
+{
+	[openPanel setCanChooseFiles:NO];
+	[openPanel setCanCreateDirectories:YES];
+	[openPanel setCanChooseDirectories:YES];
+	[openPanel setPrompt:@"Choose the download location for your dribbble likes"];
 }
 
 @end

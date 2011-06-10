@@ -7,10 +7,18 @@
 
 #import <Cocoa/Cocoa.h>
 
+#import "LRPathPopUpButton.h"
+
 @interface LRPreferenceWindow : NSWindow {
 	IBOutlet NSButton *btnChooseDirectory;
+	IBOutlet NSTextField *txtDirectory;
+	IBOutlet NSTextField *txtUsername;
+	
+	IBOutlet LRPathPopUpButton *pathPopUp;
 }
 
--(IBAction)chooseDirectory:sender;
+-(IBAction)handleAccept:sender;
+-(IBAction)handleCancel:sender;
+
 
 @end

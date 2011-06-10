@@ -11,7 +11,7 @@
 
 @implementation DribbbleLikeDownloader
 
-+(DribbbleLikeDownloader*)initWithPlayer:(NSString *)playerId
++(DribbbleLikeDownloader*)downloaderForPlayer:(NSString *)playerId directory:(NSString *)target
 {
 	DribbbleLikeDownloader *obj = [DribbbleLikeDownloader alloc];
 	obj->playerId = [playerId retain];
@@ -20,13 +20,14 @@
 	obj->currentDownloads = 0;
 	
 	obj->currentData = nil;
-	obj->targetDirectory = @"/tmp";
+	obj->targetDirectory = [target retain];
 	return obj;
 }
 
 -(void)dealloc
 {
 	[playerId release];
+	[targetDirectory release];
 	[currentData release];
 	[super dealloc];
 }

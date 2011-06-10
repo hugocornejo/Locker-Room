@@ -21,7 +21,7 @@
 	id currentDelegate;
 }
 
-+(DribbbleLikeDownloader*)initWithPlayer:(NSString*)playerId;
++(DribbbleLikeDownloader*)downloaderForPlayer:(NSString*)playerId directory:(NSString *)target;
 
 
 -(void)downloadLikes:(id)delegate;
