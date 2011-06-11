@@ -12,9 +12,17 @@
 -(void)awakeFromNib
 {
 	NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-	[txtUsername setStringValue:[defaults stringForKey:@"DribbbleUserName"]];
-	[pathPopUp setPath:[defaults stringForKey:@"LockerRoomDirectory"]];
-
+	NSString *username = [defaults stringForKey:@"DribbbleUserName"];
+	if (username == nil) {
+		username = @"";
+	}
+	[txtUsername setStringValue:username];
+	
+	NSString *directory = [defaults stringForKey:@"LockerRoomDirectory"];
+	if (directory == nil) {
+		directory = NSHomeDirectory();
+	}
+	[pathPopUp setPath:directory];
 }
 
 -(void)close
