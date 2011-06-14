@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 45;
+	objectVersion = 46;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -20,7 +20,9 @@
 		F8B1F78C138823A4002BE9FC /* SBJsonParser.m in Sources */ = {isa = PBXBuildFile; fileRef = F8B1F786138823A4002BE9FC /* SBJsonParser.m */; };
 		F8B1F78D138823A4002BE9FC /* SBJsonWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = F8B1F788138823A4002BE9FC /* SBJsonWriter.m */; };
 		F8BCC44113A1EA730025D14D /* LRPathPopUpButton.m in Sources */ = {isa = PBXBuildFile; fileRef = F8BCC44013A1EA730025D14D /* LRPathPopUpButton.m */; };
+		F8C5FBC013A7EF3E00C2E445 /* LaunchAtLoginController.m in Sources */ = {isa = PBXBuildFile; fileRef = F8C5FB2313A7488900C2E445 /* LaunchAtLoginController.m */; };
 		F8C9682B1394272A00A88844 /* DribbbleLikeDownloader.m in Sources */ = {isa = PBXBuildFile; fileRef = F8C9682A1394272A00A88844 /* DribbbleLikeDownloader.m */; };
+		F8CBDBDD13A6B6CB004C19DA /* CoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F8CBDBDC13A6B6CB004C19DA /* CoreServices.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -53,8 +55,11 @@
 		F8B1F788138823A4002BE9FC /* SBJsonWriter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonWriter.m; sourceTree = "<group>"; };
 		F8BCC43F13A1EA730025D14D /* LRPathPopUpButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LRPathPopUpButton.h; sourceTree = "<group>"; };
 		F8BCC44013A1EA730025D14D /* LRPathPopUpButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LRPathPopUpButton.m; sourceTree = "<group>"; };
+		F8C5FB2213A7488900C2E445 /* LaunchAtLoginController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LaunchAtLoginController.h; sourceTree = "<group>"; };
+		F8C5FB2313A7488900C2E445 /* LaunchAtLoginController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LaunchAtLoginController.m; sourceTree = "<group>"; };
 		F8C968291394272A00A88844 /* DribbbleLikeDownloader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DribbbleLikeDownloader.h; sourceTree = "<group>"; };
 		F8C9682A1394272A00A88844 /* DribbbleLikeDownloader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DribbbleLikeDownloader.m; sourceTree = "<group>"; };
+		F8CBDBDC13A6B6CB004C19DA /* CoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreServices.framework; path = System/Library/Frameworks/CoreServices.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +68,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */,
+				F8CBDBDD13A6B6CB004C19DA /* CoreServices.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -73,6 +79,7 @@
 			isa = PBXGroup;
 			children = (
 				F8B1F7751388238C002BE9FC /* JSON */,
+				F8C5FBD313A7EFB900C2E445 /* LaunchAtLoginController */,
 				F8C968291394272A00A88844 /* DribbbleLikeDownloader.h */,
 				F8C9682A1394272A00A88844 /* DribbbleLikeDownloader.m */,
 				F800EDF41386DD330029B321 /* LRMenulet.h */,
@@ -98,6 +105,7 @@
 		1058C7A2FEA54F0111CA2CBB /* Other Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				F8CBDBDC13A6B6CB004C19DA /* CoreServices.framework */,
 				29B97324FDCFA39411CA2CEA /* AppKit.framework */,
 				13E42FB307B3F0F600E4EEF1 /* CoreData.framework */,
 				29B97325FDCFA39411CA2CEA /* Foundation.framework */,
@@ -171,6 +179,15 @@
 			name = JSON;
 			sourceTree = "<group>";
 		};
+		F8C5FBD313A7EFB900C2E445 /* LaunchAtLoginController */ = {
+			isa = PBXGroup;
+			children = (
+				F8C5FB2213A7488900C2E445 /* LaunchAtLoginController.h */,
+				F8C5FB2313A7488900C2E445 /* LaunchAtLoginController.m */,
+			);
+			name = LaunchAtLoginController;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -198,7 +215,7 @@
 		29B97313FDCFA39411CA2CEA /* Project object */ = {
 			isa = PBXProject;
 			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "LockerRoom" */;
-			compatibilityVersion = "Xcode 3.1";
+			compatibilityVersion = "Xcode 3.2";
 			hasScannedForEncodings = 1;
 			mainGroup = 29B97314FDCFA39411CA2CEA /* LockerRoom */;
 			projectDirPath = "";
@@ -237,6 +254,7 @@
 				F8B1F78D138823A4002BE9FC /* SBJsonWriter.m in Sources */,
 				F8C9682B1394272A00A88844 /* DribbbleLikeDownloader.m in Sources */,
 				F8BCC44113A1EA730025D14D /* LRPathPopUpButton.m in Sources */,
+				F8C5FBC013A7EF3E00C2E445 /* LaunchAtLoginController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -267,6 +285,10 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				COPY_PHASE_STRIP = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SDKROOT)$(SYSTEM_LIBRARY_DIR)/Frameworks/CoreServices.framework/Frameworks\"",
+				);
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_ENABLE_FIX_AND_CONTINUE = YES;
 				GCC_MODEL_TUNING = G5;
@@ -284,6 +306,10 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SDKROOT)$(SYSTEM_LIBRARY_DIR)/Frameworks/CoreServices.framework/Frameworks\"",
+				);
 				GCC_MODEL_TUNING = G5;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = LockerRoom_Prefix.pch;

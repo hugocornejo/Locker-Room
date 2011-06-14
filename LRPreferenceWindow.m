@@ -30,7 +30,7 @@
 	NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
 	[defaults setObject:[pathPopUp path]			forKey:@"LockerRoomDirectory"];
 	[defaults setObject:[txtUsername stringValue]	forKey:@"DribbbleUserName"];
-	[defaults synchronize];
+	[defaults synchronize];	
 	[super close];
 }
 

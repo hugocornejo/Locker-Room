@@ -12,6 +12,7 @@
 @interface LRPreferenceWindow : NSWindow {
 	IBOutlet NSTextField *txtUsername;
 	IBOutlet LRPathPopUpButton *pathPopUp;
+	IBOutlet NSButton *launchAtLogin;
 }
 
 @end
