@@ -3,12 +3,12 @@
 	<data>
 		<int key="IBDocument.SystemTarget">1060</int>
 		<string key="IBDocument.SystemVersion">10J869</string>
-		<string key="IBDocument.InterfaceBuilderVersion">789</string>
+		<string key="IBDocument.InterfaceBuilderVersion">823</string>
 		<string key="IBDocument.AppKitVersion">1038.35</string>
 		<string key="IBDocument.HIToolboxVersion">461.00</string>
 		<object class="NSMutableDictionary" key="IBDocument.PluginVersions">
 			<string key="NS.key.0">com.apple.InterfaceBuilder.CocoaPlugin</string>
-			<string key="NS.object.0">789</string>
+			<string key="NS.object.0">823</string>
 		</object>
 		<object class="NSMutableArray" key="IBDocument.EditedObjectIDs">
 			<bool key="EncodedWithXMLCoder">YES</bool>
@@ -54,7 +54,7 @@
 					<bool key="EncodedWithXMLCoder">YES</bool>
 					<object class="NSMenuItem" id="255084034">
 						<reference key="NSMenu" ref="592655513"/>
-						<string key="NSTitle">Open dribbble folder</string>
+						<string key="NSTitle">Open LockerRoom folder</string>
 						<string key="NSKeyEquiv"/>
 						<int key="NSMnemonicLoc">2147483647</int>
 						<object class="NSCustomResource" key="NSOnImage" id="972137872">
@@ -68,7 +68,7 @@
 					</object>
 					<object class="NSMenuItem" id="914191872">
 						<reference key="NSMenu" ref="592655513"/>
-						<string key="NSTitle">Go to dribbble web</string>
+						<string key="NSTitle">Go to dribbble</string>
 						<string key="NSKeyEquiv"/>
 						<int key="NSMnemonicLoc">2147483647</int>
 						<reference key="NSOnImage" ref="972137872"/>
@@ -115,7 +115,7 @@
 			<object class="NSWindowTemplate" id="408868475">
 				<int key="NSWindowStyleMask">3</int>
 				<int key="NSWindowBacking">2</int>
-				<string key="NSWindowRect">{{196, 316}, {505, 194}}</string>
+				<string key="NSWindowRect">{{196, 315}, {521, 195}}</string>
 				<int key="NSWTFlags">1685585920</int>
 				<string key="NSWindowTitle">LockerRoom</string>
 				<string key="NSWindowClass">LRPreferenceWindow</string>
@@ -129,7 +129,7 @@
 						<object class="NSTextField" id="567803703">
 							<reference key="NSNextResponder" ref="576384229"/>
 							<int key="NSvFlags">268</int>
-							<string key="NSFrame">{{62, 123}, {161, 17}}</string>
+							<string key="NSFrame">{{62, 131}, {161, 17}}</string>
 							<reference key="NSSuperview" ref="576384229"/>
 							<bool key="NSEnabled">YES</bool>
 							<object class="NSTextFieldCell" key="NSCell" id="599505013">
@@ -165,13 +165,13 @@
 						<object class="NSTextField" id="172234134">
 							<reference key="NSNextResponder" ref="576384229"/>
 							<int key="NSvFlags">268</int>
-							<string key="NSFrame">{{50, 77}, {181, 17}}</string>
+							<string key="NSFrame">{{41, 85}, {182, 17}}</string>
 							<reference key="NSSuperview" ref="576384229"/>
 							<bool key="NSEnabled">YES</bool>
 							<object class="NSTextFieldCell" key="NSCell" id="1052916693">
 								<int key="NSCellFlags">68288064</int>
 								<int key="NSCellFlags2">272630784</int>
-								<string key="NSContents">Downloads folder location:</string>
+								<string key="NSContents">LockerRoom folder location:</string>
 								<reference key="NSSupport" ref="13984599"/>
 								<reference key="NSControlView" ref="172234134"/>
 								<reference key="NSBackgroundColor" ref="501714990"/>
@@ -181,7 +181,7 @@
 						<object class="NSTextField" id="871480050">
 							<reference key="NSNextResponder" ref="576384229"/>
 							<int key="NSvFlags">268</int>
-							<string key="NSFrame">{{228, 121}, {192, 22}}</string>
+							<string key="NSFrame">{{228, 129}, {192, 22}}</string>
 							<reference key="NSSuperview" ref="576384229"/>
 							<bool key="NSEnabled">YES</bool>
 							<object class="NSTextFieldCell" key="NSCell" id="295557809">
@@ -211,7 +211,7 @@
 						<object class="NSPopUpButton" id="313766911">
 							<reference key="NSNextResponder" ref="576384229"/>
 							<int key="NSvFlags">268</int>
-							<string key="NSFrame">{{225, 73}, {198, 26}}</string>
+							<string key="NSFrame">{{225, 81}, {198, 26}}</string>
 							<reference key="NSSuperview" ref="576384229"/>
 							<bool key="NSEnabled">YES</bool>
 							<object class="NSPopUpButtonCell" key="NSCell" id="279621929">
@@ -277,13 +277,13 @@
 						<object class="NSButton" id="228685920">
 							<reference key="NSNextResponder" ref="576384229"/>
 							<int key="NSvFlags">268</int>
-							<string key="NSFrame">{{133, 32}, {210, 18}}</string>
+							<string key="NSFrame">{{226, 42}, {252, 18}}</string>
 							<reference key="NSSuperview" ref="576384229"/>
 							<bool key="NSEnabled">YES</bool>
 							<object class="NSButtonCell" key="NSCell" id="986684588">
 								<int key="NSCellFlags">-2080244224</int>
 								<int key="NSCellFlags2">0</int>
-								<string key="NSContents">Launch LockerRoom at log on</string>
+								<string key="NSContents">Start LockerRoom on system startup</string>
 								<reference key="NSSupport" ref="13984599"/>
 								<reference key="NSControlView" ref="228685920"/>
 								<int key="NSButtonFlags">1211912703</int>
@@ -302,7 +302,7 @@
 							</object>
 						</object>
 					</object>
-					<string key="NSFrameSize">{505, 194}</string>
+					<string key="NSFrameSize">{521, 195}</string>
 					<reference key="NSSuperview"/>
 				</object>
 				<string key="NSScreenRect">{{0, 0}, {1680, 1028}}</string>
@@ -500,9 +500,9 @@
 							<bool key="EncodedWithXMLCoder">YES</bool>
 							<reference ref="567803703"/>
 							<reference ref="871480050"/>
-							<reference ref="172234134"/>
 							<reference ref="313766911"/>
 							<reference ref="228685920"/>
+							<reference ref="172234134"/>
 						</object>
 						<reference key="parent" ref="408868475"/>
 					</object>
@@ -660,6 +660,7 @@
 					<string>554.IBPluginDependency</string>
 					<string>555.IBPluginDependency</string>
 					<string>556.IBPluginDependency</string>
+					<string>556.IBViewBoundsToFrameTransform</string>
 					<string>557.IBPluginDependency</string>
 					<string>560.IBPluginDependency</string>
 					<string>561.IBPluginDependency</string>
@@ -676,6 +677,7 @@
 					<string>626.IBPluginDependency</string>
 					<string>627.IBPluginDependency</string>
 					<string>631.IBPluginDependency</string>
+					<string>631.IBViewBoundsToFrameTransform</string>
 					<string>632.IBPluginDependency</string>
 					<string>635.IBAttributePlaceholdersKey</string>
 					<string>635.IBPluginDependency</string>
@@ -684,17 +686,20 @@
 					<bool key="EncodedWithXMLCoder">YES</bool>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
-					<string>{{646, 457}, {194, 103}}</string>
+					<string>{{598, 457}, {222, 103}}</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
-					<string>{{440, 661}, {505, 194}}</string>
+					<string>{{287, 660}, {521, 195}}</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
-					<string>{{440, 661}, {505, 194}}</string>
+					<string>{{287, 660}, {521, 195}}</string>
 					<boolean value="NO"/>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
+					<object class="NSAffineTransform">
+						<bytes key="NSTransformStruct">P4AAAL+AAABCSAAAwtAAAA</bytes>
+					</object>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
@@ -711,6 +716,9 @@
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
+					<object class="NSAffineTransform">
+						<bytes key="NSTransformStruct">P4AAAL+AAABDBQAAwkAAAA</bytes>
+					</object>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<object class="NSMutableDictionary">
 						<bool key="EncodedWithXMLCoder">YES</bool>
