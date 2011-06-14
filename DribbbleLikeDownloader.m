@@ -88,10 +88,13 @@
 
 -(NSString*)getFileName:(NSDictionary*)shot
 {
-	NSString *url = [shot objectForKey:@"url"];
+	NSString *username = [[shot objectForKey:@"player"] objectForKey:@"username"];
 	NSURL *imageUrl = [NSURL URLWithString:[shot objectForKey:@"image_url"]];
-	NSString *lastBit = [[url lastPathComponent] stringByAppendingPathExtension:[imageUrl pathExtension]];
-	return [targetDirectory stringByAppendingPathComponent:lastBit];
+	
+	NSString *filename  = [NSString stringWithFormat:@"%@-%@",
+						   username, [imageUrl lastPathComponent]];
+	
+	return [targetDirectory stringByAppendingPathComponent:filename];
 }
 
 
@@ -113,6 +116,7 @@
 			NSURLRequest *req = [NSURLRequest requestWithURL:url];
 			NSURLDownload *download = [[NSURLDownload alloc] initWithRequest:req delegate:self];
 			if (download) {
+				NSLog(@"Downloading %@", fileName);
 				[download setDestination:fileName allowOverwrite:NO];
 				downloadsStarted = downloadsStarted + 1;
 			} else {
