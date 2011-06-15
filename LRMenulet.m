@@ -13,11 +13,12 @@
 -(void)setBusy:(BOOL)busy
 {
 	if (busy) {
-		[statusItem setTitle:@"working..."];
+		//[statusItem setTitle:@"working..."];
 		[statusItem setImage:busyIcon];
 	} else {
-		[statusItem setTitle:@"idle"];
+		//[statusItem setTitle:@"idle"];
 		[statusItem setImage:idleIcon];		
+		
 	}
 }
 
@@ -33,7 +34,7 @@
 -(void)awakeFromNib
 {
 	statusItem = [[[NSStatusBar systemStatusBar] 
-				   statusItemWithLength:NSVariableStatusItemLength] 
+				   statusItemWithLength:NSSquareStatusItemLength ] 
 				  retain];
 	
 	[statusItem setHighlightMode:YES];
