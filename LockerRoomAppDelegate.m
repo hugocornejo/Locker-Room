@@ -83,4 +83,16 @@
 	[[NSWorkspace sharedWorkspace] openURL:url];
 }
 
+-(IBAction)showPreferences:(id)sender
+{
+	[NSApp activateIgnoringOtherApps:YES];
+	[preferenceWindow makeKeyAndOrderFront:self];
+}
+
+-(void)windowWillClose:(NSNotification*)notification;
+{
+	NSLog(@"Requesting sync because preference window was closed");
+	[self downloadLikes];
+}
+
 @end
