@@ -83,9 +83,4 @@
 	[[NSWorkspace sharedWorkspace] openURL:url];
 }
 
--(IBAction)exit:(id)sender
-{
-	[NSApp terminate:self];
-}
-
 @end

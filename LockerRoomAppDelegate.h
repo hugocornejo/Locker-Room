@@ -24,7 +24,5 @@
 
 -(IBAction)openDirectory:(id)sender;
 -(IBAction)goToWeb:(id)sender;
--(IBAction)exit:(id)sender;
-
 
 @end
