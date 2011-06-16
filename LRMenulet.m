@@ -13,10 +13,8 @@
 -(void)setBusy:(BOOL)busy
 {
 	if (busy) {
-		//[statusItem setTitle:@"working..."];
 		[statusItem setImage:busyIcon];
 	} else {
-		//[statusItem setTitle:@"idle"];
 		[statusItem setImage:idleIcon];		
 		
 	}

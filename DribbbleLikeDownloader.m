@@ -183,7 +183,7 @@
 
 -(void)download:(NSURLDownload *)download didFailWithError:(NSError *)error
 {
-	NSLog(@"Download failed: %@", [error localizedDescription]);
+	NSLog(@"Error downloading %@: %@", [[download request] URL], [error localizedDescription]);
 	currentDownloads--;
 	[self downloadNextPage];
 }
