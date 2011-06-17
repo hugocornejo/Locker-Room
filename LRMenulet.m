@@ -14,9 +14,10 @@
 {
 	if (busy) {
 		[statusItem setImage:busyIcon];
+		[statusItem setAlternateImage:busyIconAlt];
 	} else {
 		[statusItem setImage:idleIcon];		
-		
+		[statusItem setAlternateImage:idleIconAlt];
 	}
 }
 
@@ -40,11 +41,18 @@
 	[statusItem setToolTip:@"LockerRoom"];
 	
 	NSBundle *bundle = [NSBundle bundleForClass:[self class]];
-	NSString *path = [bundle pathForResource:@"IdleIcon" ofType:@"png"];
+	NSString *path;
+	path = [bundle pathForResource:@"IdleIcon" ofType:@"png"];
 	idleIcon = [[NSImage alloc] initWithContentsOfFile:path];
+	
+	path = [bundle pathForResource:@"IdleIconActive" ofType:@"png"];
+	idleIconAlt = [[NSImage alloc] initWithContentsOfFile:path];
 	
 	path = [bundle pathForResource:@"DownloadingIcon" ofType:@"png"];
 	busyIcon = [[NSImage alloc] initWithContentsOfFile:path];
+	
+	path = [bundle pathForResource:@"DownloadingIconActive" ofType:@"png"];
+	busyIconAlt = [[NSImage alloc] initWithContentsOfFile:path];
 	
 	[self setBusy:NO];
 	

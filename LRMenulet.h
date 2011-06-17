@@ -13,7 +13,9 @@
 	NSStatusItem *statusItem;
 	IBOutlet NSMenu *theMenu;
 	NSImage *idleIcon;
+	NSImage *idleIconAlt;
 	NSImage *busyIcon;
+	NSImage *busyIconAlt;
 }
 
 -(void)setBusy:(BOOL)busy;
