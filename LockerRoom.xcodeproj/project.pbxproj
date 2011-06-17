@@ -22,6 +22,8 @@
 		F8B1F78C138823A4002BE9FC /* SBJsonParser.m in Sources */ = {isa = PBXBuildFile; fileRef = F8B1F786138823A4002BE9FC /* SBJsonParser.m */; };
 		F8B1F78D138823A4002BE9FC /* SBJsonWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = F8B1F788138823A4002BE9FC /* SBJsonWriter.m */; };
 		F8BCC44113A1EA730025D14D /* LRPathPopUpButton.m in Sources */ = {isa = PBXBuildFile; fileRef = F8BCC44013A1EA730025D14D /* LRPathPopUpButton.m */; };
+		F8C4F73113AB2BEE00BD4780 /* DownloadingIconActive.png in Resources */ = {isa = PBXBuildFile; fileRef = F8C4F72F13AB2BEE00BD4780 /* DownloadingIconActive.png */; };
+		F8C4F73213AB2BEE00BD4780 /* IdleIconActive.png in Resources */ = {isa = PBXBuildFile; fileRef = F8C4F73013AB2BEE00BD4780 /* IdleIconActive.png */; };
 		F8C5FBC013A7EF3E00C2E445 /* LaunchAtLoginController.m in Sources */ = {isa = PBXBuildFile; fileRef = F8C5FB2313A7488900C2E445 /* LaunchAtLoginController.m */; };
 		F8C9682B1394272A00A88844 /* DribbbleLikeDownloader.m in Sources */ = {isa = PBXBuildFile; fileRef = F8C9682A1394272A00A88844 /* DribbbleLikeDownloader.m */; };
 		F8CBDBDD13A6B6CB004C19DA /* CoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F8CBDBDC13A6B6CB004C19DA /* CoreServices.framework */; };
@@ -59,6 +61,8 @@
 		F8B1F788138823A4002BE9FC /* SBJsonWriter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonWriter.m; sourceTree = "<group>"; };
 		F8BCC43F13A1EA730025D14D /* LRPathPopUpButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LRPathPopUpButton.h; sourceTree = "<group>"; };
 		F8BCC44013A1EA730025D14D /* LRPathPopUpButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LRPathPopUpButton.m; sourceTree = "<group>"; };
+		F8C4F72F13AB2BEE00BD4780 /* DownloadingIconActive.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = DownloadingIconActive.png; sourceTree = "<group>"; };
+		F8C4F73013AB2BEE00BD4780 /* IdleIconActive.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = IdleIconActive.png; sourceTree = "<group>"; };
 		F8C5FB2213A7488900C2E445 /* LaunchAtLoginController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LaunchAtLoginController.h; sourceTree = "<group>"; };
 		F8C5FB2313A7488900C2E445 /* LaunchAtLoginController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LaunchAtLoginController.m; sourceTree = "<group>"; };
 		F8C968291394272A00A88844 /* DribbbleLikeDownloader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DribbbleLikeDownloader.h; sourceTree = "<group>"; };
@@ -150,7 +154,9 @@
 			isa = PBXGroup;
 			children = (
 				58A884FF13A96509000BAD8B /* DownloadingIcon.png */,
+				F8C4F72F13AB2BEE00BD4780 /* DownloadingIconActive.png */,
 				58A8850013A96509000BAD8B /* IdleIcon.png */,
+				F8C4F73013AB2BEE00BD4780 /* IdleIconActive.png */,
 				8D1107310486CEB800E47090 /* LockerRoom-Info.plist */,
 				089C165CFE840E0CC02AAC07 /* InfoPlist.strings */,
 				1DDD58140DA1D0A300B32029 /* MainMenu.xib */,
@@ -220,9 +226,11 @@
 /* Begin PBXProject section */
 		29B97313FDCFA39411CA2CEA /* Project object */ = {
 			isa = PBXProject;
+			attributes = {
+				ORGANIZATIONNAME = bilambee;
+			};
 			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "LockerRoom" */;
 			compatibilityVersion = "Xcode 3.2";
-			developmentRegion = English;
 			hasScannedForEncodings = 1;
 			knownRegions = (
 				English,
@@ -248,6 +256,8 @@
 				1DDD58160DA1D0A300B32029 /* MainMenu.xib in Resources */,
 				58A8850113A96509000BAD8B /* DownloadingIcon.png in Resources */,
 				58A8850213A96509000BAD8B /* IdleIcon.png in Resources */,
+				F8C4F73113AB2BEE00BD4780 /* DownloadingIconActive.png in Resources */,
+				F8C4F73213AB2BEE00BD4780 /* IdleIconActive.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
