@@ -172,6 +172,9 @@
 {
 //	NSLog(@"Download did begin");
 	currentDownloads++;
+	[currentDelegate performSelector:@selector(dribbbleLikeDownloader:downloadDidBegin:) 
+						  withObject:self 
+						  withObject:download];
 }
 
 -(void)downloadDidFinish:(NSURLDownload *)download

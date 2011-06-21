@@ -68,6 +68,12 @@
 
 -(void)dribbbleLikeDownloaderStarted:(DribbbleLikeDownloader*)dld
 {
+	// Set to busy when an actual image download starts, not yet
+	// [menulet setBusy:YES];
+}
+
+-(void)dribbbleLikeDownloader:(DribbbleLikeDownloader *)dld downloadDidBegin:(NSURLDownload*)download
+{
 	[menulet setBusy:YES];
 }
 
