@@ -21,13 +21,29 @@
 		F8B1F78B138823A4002BE9FC /* SBJsonBase.m in Sources */ = {isa = PBXBuildFile; fileRef = F8B1F784138823A4002BE9FC /* SBJsonBase.m */; };
 		F8B1F78C138823A4002BE9FC /* SBJsonParser.m in Sources */ = {isa = PBXBuildFile; fileRef = F8B1F786138823A4002BE9FC /* SBJsonParser.m */; };
 		F8B1F78D138823A4002BE9FC /* SBJsonWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = F8B1F788138823A4002BE9FC /* SBJsonWriter.m */; };
+		F8B5F2EF13B12A3A0088038C /* ScriptingBridge.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F8B5F2EE13B12A3A0088038C /* ScriptingBridge.framework */; };
+		F8B5F32F13B135570088038C /* Finder.app in Sources */ = {isa = PBXBuildFile; fileRef = F8B5F32E13B135570088038C /* Finder.app */; };
+		F8B5F37413B13CA80088038C /* DribbbleShot.m in Sources */ = {isa = PBXBuildFile; fileRef = F8B5F37313B13CA80088038C /* DribbbleShot.m */; };
 		F8BCC44113A1EA730025D14D /* LRPathPopUpButton.m in Sources */ = {isa = PBXBuildFile; fileRef = F8BCC44013A1EA730025D14D /* LRPathPopUpButton.m */; };
 		F8C4F73113AB2BEE00BD4780 /* DownloadingIconActive.png in Resources */ = {isa = PBXBuildFile; fileRef = F8C4F72F13AB2BEE00BD4780 /* DownloadingIconActive.png */; };
 		F8C4F73213AB2BEE00BD4780 /* IdleIconActive.png in Resources */ = {isa = PBXBuildFile; fileRef = F8C4F73013AB2BEE00BD4780 /* IdleIconActive.png */; };
 		F8C5FBC013A7EF3E00C2E445 /* LaunchAtLoginController.m in Sources */ = {isa = PBXBuildFile; fileRef = F8C5FB2313A7488900C2E445 /* LaunchAtLoginController.m */; };
 		F8C9682B1394272A00A88844 /* DribbbleLikeDownloader.m in Sources */ = {isa = PBXBuildFile; fileRef = F8C9682A1394272A00A88844 /* DribbbleLikeDownloader.m */; };
-		F8CBDBDD13A6B6CB004C19DA /* CoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F8CBDBDC13A6B6CB004C19DA /* CoreServices.framework */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXBuildRule section */
+		F8B5F31413B1331B0088038C /* PBXBuildRule */ = {
+			isa = PBXBuildRule;
+			compilerSpec = com.apple.compilers.proxy.script;
+			filePatterns = "*.app";
+			fileType = pattern.proxy;
+			isEditable = 1;
+			outputFiles = (
+				"$(DERIVED_FILES_DIR)/$(INPUT_FILE_BASE).h",
+			);
+			script = "sdef \"$INPUT_FILE_PATH\" | sdp -fh -o \"$DERIVED_FILES_DIR\" --basename \"$INPUT_FILE_BASE\" --bundleid `defaults read \"$INPUT_FILE_PATH/Contents/Info\" CFBundleIdentifier`";
+		};
+/* End PBXBuildRule section */
 
 /* Begin PBXFileReference section */
 		089C165DFE840E0CC02AAC07 /* English */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = English; path = English.lproj/InfoPlist.strings; sourceTree = "<group>"; };
@@ -59,6 +75,10 @@
 		F8B1F786138823A4002BE9FC /* SBJsonParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonParser.m; sourceTree = "<group>"; };
 		F8B1F787138823A4002BE9FC /* SBJsonWriter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonWriter.h; sourceTree = "<group>"; };
 		F8B1F788138823A4002BE9FC /* SBJsonWriter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonWriter.m; sourceTree = "<group>"; };
+		F8B5F2EE13B12A3A0088038C /* ScriptingBridge.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ScriptingBridge.framework; path = System/Library/Frameworks/ScriptingBridge.framework; sourceTree = SDKROOT; };
+		F8B5F32E13B135570088038C /* Finder.app */ = {isa = PBXFileReference; lastKnownFileType = wrapper.application; name = Finder.app; path = /System/Library/CoreServices/Finder.app; sourceTree = "<absolute>"; };
+		F8B5F37213B13CA80088038C /* DribbbleShot.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DribbbleShot.h; sourceTree = "<group>"; };
+		F8B5F37313B13CA80088038C /* DribbbleShot.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DribbbleShot.m; sourceTree = "<group>"; };
 		F8BCC43F13A1EA730025D14D /* LRPathPopUpButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LRPathPopUpButton.h; sourceTree = "<group>"; };
 		F8BCC44013A1EA730025D14D /* LRPathPopUpButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LRPathPopUpButton.m; sourceTree = "<group>"; };
 		F8C4F72F13AB2BEE00BD4780 /* DownloadingIconActive.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = DownloadingIconActive.png; sourceTree = "<group>"; };
@@ -67,7 +87,6 @@
 		F8C5FB2313A7488900C2E445 /* LaunchAtLoginController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LaunchAtLoginController.m; sourceTree = "<group>"; };
 		F8C968291394272A00A88844 /* DribbbleLikeDownloader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DribbbleLikeDownloader.h; sourceTree = "<group>"; };
 		F8C9682A1394272A00A88844 /* DribbbleLikeDownloader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DribbbleLikeDownloader.m; sourceTree = "<group>"; };
-		F8CBDBDC13A6B6CB004C19DA /* CoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreServices.framework; path = System/Library/Frameworks/CoreServices.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,7 +95,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */,
-				F8CBDBDD13A6B6CB004C19DA /* CoreServices.framework in Frameworks */,
+				F8B5F2EF13B12A3A0088038C /* ScriptingBridge.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -86,8 +105,11 @@
 		080E96DDFE201D6D7F000001 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				F8B5F32E13B135570088038C /* Finder.app */,
 				F8B1F7751388238C002BE9FC /* JSON */,
 				F8C5FBD313A7EFB900C2E445 /* LaunchAtLoginController */,
+				F8B5F37213B13CA80088038C /* DribbbleShot.h */,
+				F8B5F37313B13CA80088038C /* DribbbleShot.m */,
 				F8C968291394272A00A88844 /* DribbbleLikeDownloader.h */,
 				F8C9682A1394272A00A88844 /* DribbbleLikeDownloader.m */,
 				F800EDF41386DD330029B321 /* LRMenulet.h */,
@@ -106,6 +128,7 @@
 			isa = PBXGroup;
 			children = (
 				1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */,
+				F8B5F2EE13B12A3A0088038C /* ScriptingBridge.framework */,
 			);
 			name = "Linked Frameworks";
 			sourceTree = "<group>";
@@ -113,7 +136,6 @@
 		1058C7A2FEA54F0111CA2CBB /* Other Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				F8CBDBDC13A6B6CB004C19DA /* CoreServices.framework */,
 				29B97324FDCFA39411CA2CEA /* AppKit.framework */,
 				13E42FB307B3F0F600E4EEF1 /* CoreData.framework */,
 				29B97325FDCFA39411CA2CEA /* Foundation.framework */,
@@ -212,6 +234,7 @@
 				8D11072E0486CEB800E47090 /* Frameworks */,
 			);
 			buildRules = (
+				F8B5F31413B1331B0088038C /* PBXBuildRule */,
 			);
 			dependencies = (
 			);
@@ -268,6 +291,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F8B5F32F13B135570088038C /* Finder.app in Sources */,
 				8D11072D0486CEB800E47090 /* main.m in Sources */,
 				256AC3DA0F4B6AC300CF3369 /* LockerRoomAppDelegate.m in Sources */,
 				F800EDF61386DD330029B321 /* LRMenulet.m in Sources */,
@@ -280,6 +304,7 @@
 				F8C9682B1394272A00A88844 /* DribbbleLikeDownloader.m in Sources */,
 				F8BCC44113A1EA730025D14D /* LRPathPopUpButton.m in Sources */,
 				F8C5FBC013A7EF3E00C2E445 /* LaunchAtLoginController.m in Sources */,
+				F8B5F37413B13CA80088038C /* DribbbleShot.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

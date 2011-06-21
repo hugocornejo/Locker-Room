@@ -7,7 +7,8 @@
 //
 
 #import "DribbbleLikeDownloader.h"
-
+#import "DribbbleShot.h"
+#import "Finder.h"
 
 @implementation DribbbleLikeDownloader
 
@@ -23,6 +24,7 @@
 	
 	obj->currentData = nil;
 	obj->targetDirectory = [target retain];
+	
 	return obj;
 }
 
@@ -31,16 +33,19 @@
 	[playerId release];
 	[targetDirectory release];
 	[currentData release];
+	[fileNameMap release];
 	[super dealloc];
 }
 
 -(BOOL)downloadNextPage
 {
 	if (numberOfPages != -1 && currentPage >= numberOfPages) {
-		NSLog(@"Finished downloading!");
 		// download finished
-		[currentDelegate performSelector:@selector(dribbbleLikeDownloaderFinished:) withObject:self];
-		downloadInProgress = NO;
+		if (downloadInProgress != NO) {
+			NSLog(@"Finished downloading!");
+			[currentDelegate performSelector:@selector(dribbbleLikeDownloaderFinished:) withObject:self];
+			downloadInProgress = NO;
+		}
 		return NO;
 	} else if (currentDownloads > 0) {
 		// Still downloading a page, hold your horses...
@@ -79,6 +84,7 @@
 	if (downloadInProgress == NO) {
 		currentPage = 0;
 		currentDelegate = delegate;
+		fileNameMap = [[NSMutableDictionary alloc] init];
 		[self downloadNextPage];
 	}
 }
@@ -117,6 +123,14 @@
 			NSURLDownload *download = [[NSURLDownload alloc] initWithRequest:req delegate:self];
 			if (download) {
 				NSLog(@"Downloading %@", fileName);
+				DribbbleShot *shot = [[DribbbleShot alloc] init];
+				shot.localPath = fileName;
+				shot.imageURL = [url description];
+				shot.playerUsername = [[obj objectForKey:@"player"] objectForKey:@"username"];
+				shot.url = [obj objectForKey:@"url"];
+				shot.title = [obj objectForKey:@"title"];
+				[fileNameMap setObject:shot forKey:url];
+				[shot release];
 				[download setDestination:fileName allowOverwrite:NO];
 				downloadsStarted = downloadsStarted + 1;
 			} else {
@@ -177,15 +191,36 @@
 						  withObject:download];
 }
 
+-(void)setFinderComment:(NSString*)comment forFile:(NSString*)path
+{
+	@try {
+		FinderApplication *finderApp = [SBApplication applicationWithBundleIdentifier:@"com.apple.finder"];
+		NSURL *location = [NSURL fileURLWithPath:path];
+		FinderItem *item = [[finderApp items] objectAtLocation:location];
+		item.comment = comment;
+	}
+	@catch (NSException *ex) {
+		NSLog(@"Unable to set finder comment for %@: %@", path, ex);
+	}
+}
+
 -(void)downloadDidFinish:(NSURLDownload *)download
 {
-//	NSLog(@"Download finished: %@", [[download request] URL]);
+	NSURL *requestURL = [[download request] URL];
+	DribbbleShot *shot = [fileNameMap objectForKey:requestURL]; 
+	[self setFinderComment:[shot finderComment] forFile:shot.localPath];
+	[fileNameMap removeObjectForKey:requestURL];
+
 	currentDownloads--;
 	[self downloadNextPage];
 }
 
 -(void)download:(NSURLDownload *)download didFailWithError:(NSError *)error
 {
+	// Release memory allocated for dribbble shot data
+	NSURL *requestURL = [[download request] URL];
+	[fileNameMap removeObjectForKey:requestURL];
+
 	NSLog(@"Error downloading %@: %@", [[download request] URL], [error localizedDescription]);
 	currentDownloads--;
 	[self downloadNextPage];

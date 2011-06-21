@@ -20,6 +20,7 @@
 	
 	NSMutableData *currentData;
 	id currentDelegate;
+	NSMutableDictionary *fileNameMap;
 }
 
 +(DribbbleLikeDownloader*)downloaderForPlayer:(NSString*)playerId directory:(NSString *)target;
