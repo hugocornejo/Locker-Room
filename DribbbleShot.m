@@ -15,7 +15,16 @@
 @synthesize title;
 @synthesize imageURL;
 @synthesize playerUsername;
-@synthesize localPath;
+
+-(DribbbleShot*)initFromAPI:(NSDictionary*)shot
+{
+	self.url = [NSURL URLWithString:[shot objectForKey:@"url"]];
+	self.imageURL = [NSURL URLWithString:[shot objectForKey:@"image_url"]];
+	self.playerUsername = [[shot objectForKey:@"player"] objectForKey:@"username"];
+	self.title = [shot objectForKey:@"title"];
+	localPath = nil;
+	return self;
+}
 
 -(void)dealloc
 {
@@ -32,6 +41,19 @@
 	NSString *comment = [NSString stringWithFormat:@"\"%@\" by %@\n%@",
 						 title, playerUsername, url];
 	return comment;
+}
+
+-(NSString*)localPath
+{
+	if (localPath == nil) {
+		NSString *lastURLComponent = [url lastPathComponent];
+		NSRange range = [lastURLComponent rangeOfString:@"-"];
+		NSString *image = [lastURLComponent substringFromIndex:range.location+range.length];
+		NSString *ext = [imageURL pathExtension];
+		localPath = [[NSString stringWithFormat:@"%@-%@.%@",
+					  playerUsername, image, ext] retain];
+	}
+	return localPath;
 }
 
 @end

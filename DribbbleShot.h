@@ -10,20 +10,20 @@
 
 
 @interface DribbbleShot : NSObject {
-	NSString *url;
+	NSURL *url;
 	NSString *title;
-	NSString *imageURL;
+	NSURL *imageURL;
 	NSString *playerUsername;
 	NSString *localPath;
 }
 
-@property(retain) NSString *url;
+@property(retain) NSURL *url;
 @property(retain) NSString *title;
-@property(retain) NSString *imageURL;
+@property(retain) NSURL *imageURL;
 @property(retain) NSString *playerUsername;
-@property(retain) NSString *localPath;
+@property(retain,readonly) NSString *localPath;
 
 -(NSString*)finderComment;
-
+-(DribbbleShot*)initFromAPI:(NSDictionary*)shot;
 
 @end

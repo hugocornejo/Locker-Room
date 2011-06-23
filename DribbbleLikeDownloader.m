@@ -92,18 +92,6 @@
 
 #pragma mark Downloading metadata
 
--(NSString*)getFileName:(NSDictionary*)shot
-{
-	NSString *username = [[shot objectForKey:@"player"] objectForKey:@"username"];
-	NSURL *imageUrl = [NSURL URLWithString:[shot objectForKey:@"image_url"]];
-	
-	NSString *filename  = [NSString stringWithFormat:@"%@-%@",
-						   username, [imageUrl lastPathComponent]];
-	
-	return [targetDirectory stringByAppendingPathComponent:filename];
-}
-
-
 -(void)handleMetadataPage:(NSMutableDictionary*)page
 {
 	NSNumber *npages = [page objectForKey:@"pages"]; 
@@ -115,22 +103,15 @@
 	NSUInteger i, count = [likes count];
 	for (i = 0; i < count; i++) {
 		NSDictionary *obj = [likes objectAtIndex:i];
-		NSString *fileName = [self getFileName:obj];
+		DribbbleShot *shot = [[DribbbleShot alloc] initFromAPI:obj];
+		NSString *fileName = [targetDirectory stringByAppendingPathComponent:shot.localPath];
 		NSFileManager *fm = [NSFileManager defaultManager];
 		if (![fm fileExistsAtPath:fileName]) {
-			NSURL *url = [NSURL URLWithString:[obj objectForKey:@"image_url"]];
-			NSURLRequest *req = [NSURLRequest requestWithURL:url];
+			NSURLRequest *req = [NSURLRequest requestWithURL:shot.imageURL];
 			NSURLDownload *download = [[NSURLDownload alloc] initWithRequest:req delegate:self];
 			if (download) {
 				NSLog(@"Downloading %@", fileName);
-				DribbbleShot *shot = [[DribbbleShot alloc] init];
-				shot.localPath = fileName;
-				shot.imageURL = [url description];
-				shot.playerUsername = [[obj objectForKey:@"player"] objectForKey:@"username"];
-				shot.url = [obj objectForKey:@"url"];
-				shot.title = [obj objectForKey:@"title"];
-				[fileNameMap setObject:shot forKey:url];
-				[shot release];
+				[fileNameMap setObject:shot forKey:shot.imageURL];
 				[download setDestination:fileName allowOverwrite:NO];
 				downloadsStarted = downloadsStarted + 1;
 			} else {
@@ -139,6 +120,7 @@
 		} else {
 			//NSLog(@"Already downloaded: %@", fileName);
 		}
+		[shot release];
 	}
 	
 	if (downloadsStarted == 0) {
@@ -207,10 +189,12 @@
 -(void)downloadDidFinish:(NSURLDownload *)download
 {
 	NSURL *requestURL = [[download request] URL];
-	DribbbleShot *shot = [fileNameMap objectForKey:requestURL]; 
-	[self setFinderComment:[shot finderComment] forFile:shot.localPath];
+	DribbbleShot *shot = [fileNameMap objectForKey:requestURL];
+	NSString *localPath = [targetDirectory stringByAppendingPathComponent:shot.localPath];
+	[self setFinderComment:[shot finderComment] forFile:localPath];
 	[fileNameMap removeObjectForKey:requestURL];
 
+	[download release];
 	currentDownloads--;
 	[self downloadNextPage];
 }
