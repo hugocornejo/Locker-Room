@@ -23,8 +23,7 @@
 	NSMutableDictionary *fileNameMap;
 }
 
-+(DribbbleLikeDownloader*)downloaderForPlayer:(NSString*)playerId directory:(NSString *)target;
-
+-(DribbbleLikeDownloader*)initWithPlayer:(NSString*)playerId directory:(NSString *)target;
 
 -(void)downloadLikes:(id)delegate;
 

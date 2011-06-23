@@ -14,18 +14,17 @@
 
 @synthesize checkAllPages;
 
-+(DribbbleLikeDownloader*)downloaderForPlayer:(NSString *)playerId directory:(NSString *)target
+-(DribbbleLikeDownloader*)initWithPlayer:(NSString *)player directory:(NSString *)target
 {
-	DribbbleLikeDownloader *obj = [DribbbleLikeDownloader alloc];
-	obj->playerId = [playerId retain];
-	obj->currentPage = 1;
-	obj->numberOfPages = -1;
-	obj->currentDownloads = 0;
+	playerId = [player retain];
+	currentPage = 1;
+	numberOfPages = -1;
+	currentDownloads = 0;
 	
-	obj->currentData = nil;
-	obj->targetDirectory = [target retain];
+	currentData = nil;
+	targetDirectory = [target retain];
 	
-	return obj;
+	return self;
 }
 
 -(void)dealloc
@@ -173,10 +172,14 @@
 						  withObject:download];
 }
 
+
 -(void)setFinderComment:(NSString*)comment forFile:(NSString*)path
 {
 	@try {
-		FinderApplication *finderApp = [SBApplication applicationWithBundleIdentifier:@"com.apple.finder"];
+		static FinderApplication *finderApp = nil;
+		if (finderApp == nil) {
+			finderApp = [SBApplication applicationWithBundleIdentifier:@"com.apple.finder"];
+		}
 		NSURL *location = [NSURL fileURLWithPath:path];
 		FinderItem *item = [[finderApp items] objectAtLocation:location];
 		item.comment = comment;
@@ -206,6 +209,7 @@
 	[fileNameMap removeObjectForKey:requestURL];
 
 	NSLog(@"Error downloading %@: %@", [[download request] URL], [error localizedDescription]);
+	[download release];
 	currentDownloads--;
 	[self downloadNextPage];
 }

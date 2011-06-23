@@ -42,7 +42,7 @@
 		NSString *username = [defaults stringForKey:@"DribbbleUserName"];
 		NSString *directory = [defaults stringForKey:@"LockerRoomDirectory"];
 		if (username != nil && directory != nil) {
-			downloader = [DribbbleLikeDownloader downloaderForPlayer:username directory:directory];
+			downloader = [[DribbbleLikeDownloader alloc] initWithPlayer:username directory:directory];
 			if (fullScanCountdown == 0) {
 				NSLog(@"Too long since last full check, checking all pages");
 				downloader.checkAllPages = YES;
