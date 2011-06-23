@@ -29,6 +29,7 @@
 		F8C4F73213AB2BEE00BD4780 /* IdleIconActive.png in Resources */ = {isa = PBXBuildFile; fileRef = F8C4F73013AB2BEE00BD4780 /* IdleIconActive.png */; };
 		F8C5FBC013A7EF3E00C2E445 /* LaunchAtLoginController.m in Sources */ = {isa = PBXBuildFile; fileRef = F8C5FB2313A7488900C2E445 /* LaunchAtLoginController.m */; };
 		F8C9682B1394272A00A88844 /* DribbbleLikeDownloader.m in Sources */ = {isa = PBXBuildFile; fileRef = F8C9682A1394272A00A88844 /* DribbbleLikeDownloader.m */; };
+		F8C96C1813B390DA0053F244 /* icon.icns in Resources */ = {isa = PBXBuildFile; fileRef = F8C96C1713B390DA0053F244 /* icon.icns */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXBuildRule section */
@@ -87,6 +88,7 @@
 		F8C5FB2313A7488900C2E445 /* LaunchAtLoginController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LaunchAtLoginController.m; sourceTree = "<group>"; };
 		F8C968291394272A00A88844 /* DribbbleLikeDownloader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DribbbleLikeDownloader.h; sourceTree = "<group>"; };
 		F8C9682A1394272A00A88844 /* DribbbleLikeDownloader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DribbbleLikeDownloader.m; sourceTree = "<group>"; };
+		F8C96C1713B390DA0053F244 /* icon.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = icon.icns; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,7 +107,6 @@
 		080E96DDFE201D6D7F000001 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				F8B5F32E13B135570088038C /* Finder.app */,
 				F8B1F7751388238C002BE9FC /* JSON */,
 				F8C5FBD313A7EFB900C2E445 /* LaunchAtLoginController */,
 				F8B5F37213B13CA80088038C /* DribbbleShot.h */,
@@ -175,6 +176,8 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				F8B5F32E13B135570088038C /* Finder.app */,
+				F8C96C1713B390DA0053F244 /* icon.icns */,
 				58A884FF13A96509000BAD8B /* DownloadingIcon.png */,
 				F8C4F72F13AB2BEE00BD4780 /* DownloadingIconActive.png */,
 				58A8850013A96509000BAD8B /* IdleIcon.png */,
@@ -254,7 +257,6 @@
 			};
 			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "LockerRoom" */;
 			compatibilityVersion = "Xcode 3.2";
-			developmentRegion = English;
 			hasScannedForEncodings = 1;
 			knownRegions = (
 				English,
@@ -282,6 +284,7 @@
 				58A8850213A96509000BAD8B /* IdleIcon.png in Resources */,
 				F8C4F73113AB2BEE00BD4780 /* DownloadingIconActive.png in Resources */,
 				F8C4F73213AB2BEE00BD4780 /* IdleIconActive.png in Resources */,
+				F8C96C1813B390DA0053F244 /* icon.icns in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
