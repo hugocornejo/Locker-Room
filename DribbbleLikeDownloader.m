@@ -43,7 +43,8 @@
 	static NSString *userAgent = nil;
 	if (userAgent == nil) {
 		struct utsname name;
-		if (!uname(&name)) {
+		if (uname(&name) == -1) {
+			NSLog(@"uname: %s", strerror(errno));
 			return nil;
 		}
 		
