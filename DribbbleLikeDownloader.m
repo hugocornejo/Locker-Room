@@ -10,6 +10,8 @@
 #import "DribbbleShot.h"
 #import "Finder.h"
 
+#include <sys/utsname.h>
+
 @implementation DribbbleLikeDownloader
 
 @synthesize checkAllPages;
@@ -36,6 +38,29 @@
 	[super dealloc];
 }
 
+-(NSURLRequest*)requestWithURL:(NSURL*)url
+{
+	static NSString *userAgent = nil;
+	if (userAgent == nil) {
+		struct utsname name;
+		if (!uname(&name)) {
+			return nil;
+		}
+		
+		NSBundle *mainBundle = [NSBundle mainBundle];
+		NSString *appName = [mainBundle objectForInfoDictionaryKey:@"CFBundleName"];
+		NSString *appVersion = [mainBundle objectForInfoDictionaryKey:@"CFBundleVersion"];
+		userAgent = [NSString stringWithFormat:@"%@/%@ OS: %s-%s/%s Contact: %@",
+					 appName, appVersion,
+					 name.sysname, name.machine, name.release,
+					 @"http://bilambee.com/lockerroom"];
+	}
+	
+	NSMutableURLRequest *req = [NSMutableURLRequest requestWithURL:url];
+	[req setValue:userAgent forHTTPHeaderField:@"User-Agent"];
+	return req;
+}
+
 -(BOOL)downloadNextPage
 {
 	if (numberOfPages != -1 && currentPage >= numberOfPages) {
@@ -57,7 +82,7 @@
 							@"http://api.dribbble.com/players/%@/shots/likes?page=%d&per_page=30", 
 							playerId, currentPage];
 		NSURL *url = [NSURL URLWithString:urlStr];
-		NSURLRequest *req = [NSURLRequest requestWithURL:url];
+		NSURLRequest *req = [self requestWithURL:url];
 		NSURLConnection *conn = [NSURLConnection connectionWithRequest:req delegate:self];
 		if (conn) {
 			NSLog(@"Downloading page %d", currentPage);
@@ -106,7 +131,7 @@
 		NSString *fileName = [targetDirectory stringByAppendingPathComponent:shot.localPath];
 		NSFileManager *fm = [NSFileManager defaultManager];
 		if (![fm fileExistsAtPath:fileName]) {
-			NSURLRequest *req = [NSURLRequest requestWithURL:shot.imageURL];
+			NSURLRequest *req = [self requestWithURL:shot.imageURL];
 			NSURLDownload *download = [[NSURLDownload alloc] initWithRequest:req delegate:self];
 			if (download) {
 				NSLog(@"Downloading %@", fileName);
