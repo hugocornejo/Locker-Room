@@ -22,7 +22,7 @@
 	
 	NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
 	if ([defaults stringForKey:@"DribbbleUserName"] == nil) {
-		[preferenceWindow makeKeyAndOrderFront:self];
+		[welcomeWindow makeKeyAndOrderFront:self];
 	}
 }
 
@@ -99,6 +99,12 @@
 {
 	NSLog(@"Requesting sync because preference window was closed");
 	[self downloadLikes];
+}
+
+-(void)windowDidBecomeMain:(NSNotification*)notification;
+{
+	LRPreferenceWindow *win = [notification object];
+	[win readDefaults:self];
 }
 
 @end

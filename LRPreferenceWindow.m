@@ -9,7 +9,7 @@
 
 @implementation LRPreferenceWindow
 
--(void)awakeFromNib
+-(void)readDefaults:(id)sender
 {
 	NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
 	NSString *username = [defaults stringForKey:@"DribbbleUserName"];
@@ -23,6 +23,11 @@
 		directory = NSHomeDirectory();
 	}
 	[pathPopUp setPath:directory];
+}
+
+-(void)awakeFromNib
+{
+	[self readDefaults:self];
 }
 
 -(void)close

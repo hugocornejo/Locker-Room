@@ -14,6 +14,7 @@
 @interface LockerRoomAppDelegate : NSObject <NSApplicationDelegate> {
 	IBOutlet LRMenulet *menulet;
 	IBOutlet LRPreferenceWindow *preferenceWindow;
+	IBOutlet LRPreferenceWindow *welcomeWindow;
 	
 	NSTimer *updateTimer;
 	

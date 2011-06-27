@@ -15,4 +15,6 @@
 	IBOutlet NSButton *launchAtLogin;
 }
 
+-(IBAction)readDefaults:(id)sender;
+
 @end
