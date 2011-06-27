@@ -97,8 +97,8 @@
 			return YES;
 		} else {
 			NSLog(@"Download failed on page %d", currentPage);
-			[currentDelegate performSelector:@selector(dribbbleLikeDownloaderFinished:) withObject:self];
 			downloadInProgress = NO; // download failed
+			[currentDelegate performSelector:@selector(dribbbleLikeDownloaderFinished:) withObject:self];
 			return NO;
 		}
 	}
@@ -185,6 +185,8 @@
 -(void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error
 {
 	NSLog(@"Download failed: %@", [error localizedDescription]);
+	downloadInProgress = NO; // download failed
+	[currentDelegate performSelector:@selector(dribbbleLikeDownloaderFinished:) withObject:self];
 }
 
 #pragma mark Downloading shots
