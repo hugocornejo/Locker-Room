@@ -24,6 +24,9 @@
 		F8B5F2EF13B12A3A0088038C /* ScriptingBridge.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F8B5F2EE13B12A3A0088038C /* ScriptingBridge.framework */; };
 		F8B5F32F13B135570088038C /* Finder.app in Sources */ = {isa = PBXBuildFile; fileRef = F8B5F32E13B135570088038C /* Finder.app */; };
 		F8B5F37413B13CA80088038C /* DribbbleShot.m in Sources */ = {isa = PBXBuildFile; fileRef = F8B5F37313B13CA80088038C /* DribbbleShot.m */; };
+		F8B65A4F13B931C700A2AE96 /* Sparkle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F8B65A4E13B931C700A2AE96 /* Sparkle.framework */; };
+		F8B65B3213B9335300A2AE96 /* Sparkle.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = F8B65A4E13B931C700A2AE96 /* Sparkle.framework */; };
+		F8B65B3813B9344100A2AE96 /* dsa_pub.pem in Resources */ = {isa = PBXBuildFile; fileRef = F8B65B3713B9344100A2AE96 /* dsa_pub.pem */; };
 		F8BCC44113A1EA730025D14D /* LRPathPopUpButton.m in Sources */ = {isa = PBXBuildFile; fileRef = F8BCC44013A1EA730025D14D /* LRPathPopUpButton.m */; };
 		F8C4F73113AB2BEE00BD4780 /* DownloadingIconActive.png in Resources */ = {isa = PBXBuildFile; fileRef = F8C4F72F13AB2BEE00BD4780 /* DownloadingIconActive.png */; };
 		F8C4F73213AB2BEE00BD4780 /* IdleIconActive.png in Resources */ = {isa = PBXBuildFile; fileRef = F8C4F73013AB2BEE00BD4780 /* IdleIconActive.png */; };
@@ -45,6 +48,19 @@
 			script = "sdef \"$INPUT_FILE_PATH\" | sdp -fh -o \"$DERIVED_FILES_DIR\" --basename \"$INPUT_FILE_BASE\" --bundleid `defaults read \"$INPUT_FILE_PATH/Contents/Info\" CFBundleIdentifier`";
 		};
 /* End PBXBuildRule section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		F8B65B1C13B9324900A2AE96 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				F8B65B3213B9335300A2AE96 /* Sparkle.framework in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		089C165DFE840E0CC02AAC07 /* English */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = English; path = English.lproj/InfoPlist.strings; sourceTree = "<group>"; };
@@ -80,6 +96,8 @@
 		F8B5F32E13B135570088038C /* Finder.app */ = {isa = PBXFileReference; lastKnownFileType = wrapper.application; name = Finder.app; path = /System/Library/CoreServices/Finder.app; sourceTree = "<absolute>"; };
 		F8B5F37213B13CA80088038C /* DribbbleShot.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DribbbleShot.h; sourceTree = "<group>"; };
 		F8B5F37313B13CA80088038C /* DribbbleShot.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DribbbleShot.m; sourceTree = "<group>"; };
+		F8B65A4E13B931C700A2AE96 /* Sparkle.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Sparkle.framework; sourceTree = "<group>"; };
+		F8B65B3713B9344100A2AE96 /* dsa_pub.pem */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = dsa_pub.pem; sourceTree = "<group>"; };
 		F8BCC43F13A1EA730025D14D /* LRPathPopUpButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LRPathPopUpButton.h; sourceTree = "<group>"; };
 		F8BCC44013A1EA730025D14D /* LRPathPopUpButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LRPathPopUpButton.m; sourceTree = "<group>"; };
 		F8C4F72F13AB2BEE00BD4780 /* DownloadingIconActive.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = DownloadingIconActive.png; sourceTree = "<group>"; };
@@ -98,6 +116,7 @@
 			files = (
 				8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */,
 				F8B5F2EF13B12A3A0088038C /* ScriptingBridge.framework in Frameworks */,
+				F8B65A4F13B931C700A2AE96 /* Sparkle.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -140,6 +159,7 @@
 				29B97324FDCFA39411CA2CEA /* AppKit.framework */,
 				13E42FB307B3F0F600E4EEF1 /* CoreData.framework */,
 				29B97325FDCFA39411CA2CEA /* Foundation.framework */,
+				F8B65A4E13B931C700A2AE96 /* Sparkle.framework */,
 			);
 			name = "Other Frameworks";
 			sourceTree = "<group>";
@@ -177,6 +197,7 @@
 			isa = PBXGroup;
 			children = (
 				F8B5F32E13B135570088038C /* Finder.app */,
+				F8B65B3713B9344100A2AE96 /* dsa_pub.pem */,
 				F8C96C1713B390DA0053F244 /* icon.icns */,
 				58A884FF13A96509000BAD8B /* DownloadingIcon.png */,
 				F8C4F72F13AB2BEE00BD4780 /* DownloadingIconActive.png */,
@@ -235,6 +256,7 @@
 				8D1107290486CEB800E47090 /* Resources */,
 				8D11072C0486CEB800E47090 /* Sources */,
 				8D11072E0486CEB800E47090 /* Frameworks */,
+				F8B65B1C13B9324900A2AE96 /* CopyFiles */,
 			);
 			buildRules = (
 				F8B5F31413B1331B0088038C /* PBXBuildRule */,
@@ -285,6 +307,7 @@
 				F8C4F73113AB2BEE00BD4780 /* DownloadingIconActive.png in Resources */,
 				F8C4F73213AB2BEE00BD4780 /* IdleIconActive.png in Resources */,
 				F8C96C1813B390DA0053F244 /* icon.icns in Resources */,
+				F8B65B3813B9344100A2AE96 /* dsa_pub.pem in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -342,6 +365,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SDKROOT)$(SYSTEM_LIBRARY_DIR)/Frameworks/CoreServices.framework/Frameworks\"",
+					"\"$(SRCROOT)\"",
 				);
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_ENABLE_FIX_AND_CONTINUE = YES;
@@ -363,6 +387,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SDKROOT)$(SYSTEM_LIBRARY_DIR)/Frameworks/CoreServices.framework/Frameworks\"",
+					"\"$(SRCROOT)\"",
 				);
 				GCC_MODEL_TUNING = G5;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;

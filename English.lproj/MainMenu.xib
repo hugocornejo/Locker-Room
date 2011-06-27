@@ -12,9 +12,9 @@
 		</object>
 		<object class="NSMutableArray" key="IBDocument.EditedObjectIDs">
 			<bool key="EncodedWithXMLCoder">YES</bool>
+			<integer value="653"/>
 			<integer value="544"/>
 			<integer value="534"/>
-			<integer value="653"/>
 		</object>
 		<object class="NSArray" key="IBDocument.PluginDependencies">
 			<bool key="EncodedWithXMLCoder">YES</bool>
@@ -317,6 +317,7 @@
 				<string key="NSWindowTitle">Welcome to LockerRoom</string>
 				<string key="NSWindowClass">LRPreferenceWindow</string>
 				<nil key="NSViewClass"/>
+				<string key="NSWindowContentMaxSize">{1.79769e+308, 1.79769e+308}</string>
 				<object class="NSView" key="NSWindowView" id="985149708">
 					<reference key="NSNextResponder"/>
 					<int key="NSvFlags">256</int>
@@ -506,6 +507,9 @@ YmJibGUgbGlrZXMgdG8gYSBsb2NhbCBmb2xkZXIgc28gdGhhdCB5b3UgbmV2ZXIgbG9zZSB0aGVtLg</
 				</object>
 				<string key="NSScreenRect">{{0, 0}, {1680, 1028}}</string>
 				<string key="NSMaxSize">{1.79769e+308, 1.79769e+308}</string>
+			</object>
+			<object class="NSCustomObject" id="374993192">
+				<string key="NSClassName">SUUpdater</string>
 			</object>
 		</object>
 		<object class="IBObjectContainer" key="IBDocument.Objects">
@@ -1048,6 +1052,11 @@ YmJibGUgbGlrZXMgdG8gYSBsb2NhbCBmb2xkZXIgc28gdGhhdCB5b3UgbmV2ZXIgbG9zZSB0aGVtLg</
 						<reference key="object" ref="716185666"/>
 						<reference key="parent" ref="78999685"/>
 					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">689</int>
+						<reference key="object" ref="374993192"/>
+						<reference key="parent" ref="0"/>
+					</object>
 				</object>
 			</object>
 			<object class="NSMutableDictionary" key="flattenedProperties">
@@ -1112,6 +1121,7 @@ YmJibGUgbGlrZXMgdG8gYSBsb2NhbCBmb2xkZXIgc28gdGhhdCB5b3UgbmV2ZXIgbG9zZSB0aGVtLg</
 					<string>672.IBPluginDependency</string>
 					<string>673.IBPluginDependency</string>
 					<string>674.IBPluginDependency</string>
+					<string>689.IBPluginDependency</string>
 				</object>
 				<object class="NSMutableArray" key="dict.values">
 					<bool key="EncodedWithXMLCoder">YES</bool>
@@ -1183,6 +1193,7 @@ YmJibGUgbGlrZXMgdG8gYSBsb2NhbCBmb2xkZXIgc28gdGhhdCB5b3UgbmV2ZXIgbG9zZSB0aGVtLg</
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
+					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 				</object>
 			</object>
 			<object class="NSMutableDictionary" key="unlocalizedProperties">
@@ -1201,7 +1212,7 @@ YmJibGUgbGlrZXMgdG8gYSBsb2NhbCBmb2xkZXIgc28gdGhhdCB5b3UgbmV2ZXIgbG9zZSB0aGVtLg</
 				</object>
 			</object>
 			<nil key="sourceID"/>
-			<int key="maxID">688</int>
+			<int key="maxID">689</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<object class="NSMutableArray" key="referencedPartialClassDescriptions">
@@ -1762,6 +1773,20 @@ YmJibGUgbGlrZXMgdG8gYSBsb2NhbCBmb2xkZXIgc28gdGhhdCB5b3UgbmV2ZXIgbG9zZSB0aGVtLg</
 					</object>
 				</object>
 				<object class="IBPartialClassDescription">
+					<string key="className">NSObject</string>
+					<object class="IBClassDescriptionSource" key="sourceIdentifier">
+						<string key="majorKey">IBFrameworkSource</string>
+						<string key="minorKey">Sparkle.framework/Headers/SUAppcast.h</string>
+					</object>
+				</object>
+				<object class="IBPartialClassDescription">
+					<string key="className">NSObject</string>
+					<object class="IBClassDescriptionSource" key="sourceIdentifier" id="600743941">
+						<string key="majorKey">IBFrameworkSource</string>
+						<string key="minorKey">Sparkle.framework/Headers/SUUpdater.h</string>
+					</object>
+				</object>
+				<object class="IBPartialClassDescription">
 					<string key="className">NSPopUpButton</string>
 					<string key="superclassName">NSButton</string>
 					<object class="IBClassDescriptionSource" key="sourceIdentifier">
@@ -1852,6 +1877,33 @@ YmJibGUgbGlrZXMgdG8gYSBsb2NhbCBmb2xkZXIgc28gdGhhdCB5b3UgbmV2ZXIgbG9zZSB0aGVtLg</
 						<string key="majorKey">IBFrameworkSource</string>
 						<string key="minorKey">AppKit.framework/Headers/NSWindowScripting.h</string>
 					</object>
+				</object>
+				<object class="IBPartialClassDescription">
+					<string key="className">SUUpdater</string>
+					<string key="superclassName">NSObject</string>
+					<object class="NSMutableDictionary" key="actions">
+						<string key="NS.key.0">checkForUpdates:</string>
+						<string key="NS.object.0">id</string>
+					</object>
+					<object class="NSMutableDictionary" key="actionInfosByName">
+						<string key="NS.key.0">checkForUpdates:</string>
+						<object class="IBActionInfo" key="NS.object.0">
+							<string key="name">checkForUpdates:</string>
+							<string key="candidateClassName">id</string>
+						</object>
+					</object>
+					<object class="NSMutableDictionary" key="outlets">
+						<string key="NS.key.0">delegate</string>
+						<string key="NS.object.0">id</string>
+					</object>
+					<object class="NSMutableDictionary" key="toOneOutletInfosByName">
+						<string key="NS.key.0">delegate</string>
+						<object class="IBToOneOutletInfo" key="NS.object.0">
+							<string key="name">delegate</string>
+							<string key="candidateClassName">id</string>
+						</object>
+					</object>
+					<reference key="sourceIdentifier" ref="600743941"/>
 				</object>
 			</object>
 		</object>
