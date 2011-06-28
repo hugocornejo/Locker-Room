@@ -15,8 +15,10 @@
 	NSURL *imageURL;
 	NSString *playerUsername;
 	NSString *localPath;
+	NSString *shotId;
 }
 
+@property(retain) NSString *shotId;
 @property(retain) NSURL *url;
 @property(retain) NSString *title;
 @property(retain) NSURL *imageURL;

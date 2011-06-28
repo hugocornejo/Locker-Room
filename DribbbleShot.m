@@ -11,6 +11,7 @@
 
 @implementation DribbbleShot
 
+@synthesize shotId;
 @synthesize url;
 @synthesize title;
 @synthesize imageURL;
@@ -18,6 +19,7 @@
 
 -(DribbbleShot*)initFromAPI:(NSDictionary*)shot
 {
+	self.shotId = [shot objectForKey:@"id"];
 	self.url = [NSURL URLWithString:[shot objectForKey:@"url"]];
 	self.imageURL = [NSURL URLWithString:[shot objectForKey:@"image_url"]];
 	self.playerUsername = [[shot objectForKey:@"player"] objectForKey:@"username"];
@@ -50,8 +52,12 @@
 		NSRange range = [lastURLComponent rangeOfString:@"-"];
 		NSString *image = [lastURLComponent substringFromIndex:range.location+range.length];
 		NSString *ext = [imageURL pathExtension];
-		localPath = [[NSString stringWithFormat:@"%@-%@.%@",
-					  playerUsername, image, ext] retain];
+		// In case the file name is ".jpg":
+		if ([ext length] == 0) {
+			ext = [imageURL lastPathComponent];
+		}
+		localPath = [[NSString stringWithFormat:@"%@-%@-%@.%@",
+					  playerUsername, image, shotId, ext] retain];
 	}
 	return localPath;
 }
