@@ -20,7 +20,9 @@
 	
 	NSString *directory = [defaults stringForKey:@"LockerRoomDirectory"];
 	if (directory == nil) {
-		directory = NSHomeDirectory();
+		NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+		directory = [[paths objectAtIndex:0] stringByAppendingPathComponent:@"LockerRoom"];
+		NSLog(@"Default download directory %@", directory);
 	}
 	[pathPopUp setPath:directory];
 }

@@ -25,6 +25,17 @@
 	
 	currentData = nil;
 	targetDirectory = [target retain];
+	NSFileManager *fm = [NSFileManager defaultManager];
+	if (![fm fileExistsAtPath:target]) {
+		NSError *error = nil;
+		[fm createDirectoryAtPath:target 
+	  withIntermediateDirectories:YES 
+					   attributes:nil 
+							error:&error];
+		if (error != nil) {
+			NSLog(@"Unable to create target directory: %@", [error localizedDescription]);
+		}
+	}
 	
 	return self;
 }
