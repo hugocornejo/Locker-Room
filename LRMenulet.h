@@ -19,5 +19,6 @@
 }
 
 -(void)setBusy:(BOOL)busy;
+-(void)createStatusItem;
 
 @end

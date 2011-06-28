@@ -30,7 +30,7 @@
 	[super dealloc];
 }
 
--(void)awakeFromNib
+-(void)createStatusItem
 {
 	statusItem = [[[NSStatusBar systemStatusBar] 
 				   statusItemWithLength:NSSquareStatusItemLength ] 

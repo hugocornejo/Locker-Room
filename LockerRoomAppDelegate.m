@@ -7,7 +7,6 @@
 //
 
 #import "LockerRoomAppDelegate.h"
-#import "DribbbleLikeDownloader.h"
 
 @implementation LockerRoomAppDelegate
 
@@ -23,7 +22,10 @@
 	NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
 	if ([defaults stringForKey:@"DribbbleUserName"] == nil) {
 		[welcomeWindow makeKeyAndOrderFront:self];
+	} else {
+		[menulet createStatusItem];
 	}
+
 }
 
 -(void)dealloc
@@ -98,6 +100,10 @@
 -(void)windowWillClose:(NSNotification*)notification;
 {
 	NSLog(@"Requesting sync because preference window was closed");
+	NSWindow *win = [notification object];
+	if (win == welcomeWindow) {
+		[menulet createStatusItem];
+	}
 	[self downloadLikes];
 }
 
