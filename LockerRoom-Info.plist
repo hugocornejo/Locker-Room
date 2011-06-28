@@ -33,6 +33,6 @@
 	<key>SUPublicDSAKeyFile</key>
 	<string>dsa_pub.pem</string>
 	<key>SUFeedURL</key>
-	<string>http://bilambee.com/lockerroom/update.xml</string>
+	<string>http://bilambee.com/lockerroom/release/update.xml</string>
 </dict>
 </plist>
