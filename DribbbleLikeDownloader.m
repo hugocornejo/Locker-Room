@@ -62,7 +62,7 @@
 		NSBundle *mainBundle = [NSBundle mainBundle];
 		NSString *appName = [mainBundle objectForInfoDictionaryKey:@"CFBundleName"];
 		NSString *appVersion = [mainBundle objectForInfoDictionaryKey:@"CFBundleVersion"];
-		userAgent = [NSString stringWithFormat:@"%@/%@ OS: %s-%s/%s Contact: %@",
+		userAgent = [[NSString alloc] initWithFormat:@"%@/%@ OS: %s-%s/%s Contact: %@",
 					 appName, appVersion,
 					 name.sysname, name.machine, name.release,
 					 @"http://bilambee.com/lockerroom"];
