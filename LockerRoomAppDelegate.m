@@ -21,6 +21,7 @@
 	
 	NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
 	if ([defaults stringForKey:@"DribbbleUserName"] == nil) {
+		[NSApp activateIgnoringOtherApps:YES];
 		[welcomeWindow makeKeyAndOrderFront:self];
 	} else {
 		[menulet createStatusItem];
