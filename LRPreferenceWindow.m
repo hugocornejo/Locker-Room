@@ -32,12 +32,17 @@
 	[self readDefaults:self];
 }
 
--(void)close
+-(void)writeDefaults
 {
 	NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
 	[defaults setObject:[pathPopUp path]			forKey:@"LockerRoomDirectory"];
 	[defaults setObject:[txtUsername stringValue]	forKey:@"DribbbleUserName"];
 	[defaults synchronize];
+}
+
+-(void)close
+{
+	[self writeDefaults];
 	[super close];
 }
 

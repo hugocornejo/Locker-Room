@@ -102,17 +102,12 @@
 -(void)windowWillClose:(NSNotification*)notification;
 {
 	NSLog(@"Requesting sync because preference window was closed");
-	NSWindow *win = [notification object];
+	LRPreferenceWindow *win = [notification object];
 	if (win == welcomeWindow) {
 		[menulet createStatusItem];
+		[preferenceWindow readDefaults:self];
 	}
 	[self downloadLikes];
-}
-
--(void)windowDidBecomeMain:(NSNotification*)notification;
-{
-	LRPreferenceWindow *win = [notification object];
-	[win readDefaults:self];
 }
 
 @end
