@@ -232,8 +232,9 @@
 {
 	NSURL *requestURL = [[download request] URL];
 	DribbbleShot *shot = [fileNameMap objectForKey:requestURL];
-	NSString *localPath = [targetDirectory stringByAppendingPathComponent:shot.localPath];
-	[self setFinderComment:[shot finderComment] forFile:localPath];
+	//NSString *localPath = [targetDirectory stringByAppendingPathComponent:shot.localPath];
+	//[self setFinderComment:[shot finderComment] forFile:localPath];
+    // The previous two lines used to work in Snow Leopard
 	[fileNameMap removeObjectForKey:requestURL];
 
 	[download release];
